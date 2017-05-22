@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string-array name="major">
+        <item>컴퓨터학과</item>
+        <item>정보통신학과</item>
+        <item>정보보호학과</item>
+        <item>화학과</item>
+        <item>수학과</item>
+        <item>영어영문학과</item>
+        <item>국어국문학과</item>
+
+    </string-array>
+
+    <string-array name="disease">
+
+        <item>그냥아파서</item>
+        <item>목디스크</item>
+        <item>감기</item>
+        <item>근육통</item>
+        <item>피부관련</item>
+        <item>열이나서</item>
+        <item>배가아파서</item>
+
+
+    </string-array>
+
+    <string-array name="time">
+
+        <item>9:00 ~ 10:00</item>
+        <item>10:00 ~ 11:00</item>
+        <item>11:00 ~ 12:00</item>
+        <item>13:00 ~ 14:00</item>
+        <item>14:00 ~ 15:00</item>
+        <item>15:00 ~ 16:00</item>
+        <item>16:00 ~ 17:00</item>
+
+
+
+    </string-array>
+
+</resources>
