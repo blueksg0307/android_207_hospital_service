@@ -53,12 +53,12 @@ public class UserListAdapter extends BaseAdapter {
         View v = View.inflate(context, R.layout.user, null);
 
         TextView userCount =(TextView) v.findViewById(R.id.usercount);
-        TextView userName =(TextView) v.findViewById(R.id.userName);
+        TextView username =(TextView) v.findViewById(R.id.userName);
         TextView wantDate =(TextView) v.findViewById(R.id.book_date);
 
 
         userCount.setText(userList.get(i).getUserCount()+"");
-        userName.setText(userList.get(i).getUserName()+"");
+        username.setText(userList.get(i).getUserName());
         wantDate.setText(userList.get(i).getBookDate()+"");
 
         if(userCount == null){

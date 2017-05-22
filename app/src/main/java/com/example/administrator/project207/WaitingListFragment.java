@@ -85,11 +85,12 @@ public class WaitingListFragment extends Fragment {
     public void onActivityCreated(Bundle b){
         super.onActivityCreated(b);
 
+                new BackgroundTask().execute();
                 userListView = (ListView) getView().findViewById(R.id.UserListView);
                 userList = new ArrayList<>();
                 adapter = new UserListAdapter(getContext().getApplicationContext(), userList);
                 userListView.setAdapter(adapter);
-                new BackgroundTask().execute();
+
 
     }
 
@@ -190,7 +191,7 @@ public class WaitingListFragment extends Fragment {
                     userCount = count + 1;
                     userName = object.getString("name");
                     bookDate = object.getString("wanttime");
-                    User user = new User(userCount, userName, bookDate);
+                    User user = new User(userCount, userName, bookDate.substring(0,16));
                     userList.add(user);
                     count++;
 

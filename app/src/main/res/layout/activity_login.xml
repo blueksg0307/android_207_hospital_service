@@ -17,7 +17,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="225dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorGreen"
             android:orientation="vertical">
 
 
@@ -63,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="50dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorGreen"
                 android:drawableLeft="@drawable/ic_person_add_black_24dp"
                 android:drawableStart="@drawable/ic_person_add_black_24dp"
                 android:hint="ID"
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorGreen"
                 android:drawableLeft="@drawable/ic_lock_black_24dp"
                 android:drawableStart="@drawable/ic_lock_black_24dp"
                 android:hint="PASSWORD"
@@ -98,7 +98,7 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textColor="#ffffff"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorGray"
                 android:text="login"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"

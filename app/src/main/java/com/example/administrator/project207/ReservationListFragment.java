@@ -69,11 +69,12 @@ public class ReservationListFragment extends Fragment {
     public void onActivityCreated(Bundle b){
         super.onActivityCreated(b);
 
+                new BackgroundTask().execute();
                 userListView = (ListView) getView().findViewById(R.id.UserListView);
                 userList = new ArrayList<>();
                 adapter = new UserListAdapter(getContext().getApplicationContext(), userList);
                 userListView.setAdapter(adapter);
-                new BackgroundTask().execute();
+
 
     }
 
@@ -146,6 +147,10 @@ public class ReservationListFragment extends Fragment {
 
             try{
 
+
+
+
+
                 userList.clear();
                 JSONObject jsonObject = new JSONObject(result);
                 JSONArray jsonArray = jsonObject.getJSONArray("response");
@@ -163,7 +168,6 @@ public class ReservationListFragment extends Fragment {
                     User user = new User(userCount, userName, bookDate);
                     userList.add(user);
                     count++;
-
 
                 }
                 if(count == 0 ){

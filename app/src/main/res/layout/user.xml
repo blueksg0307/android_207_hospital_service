@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingRight="10dp"
     android:paddingLeft="10dp"
@@ -11,19 +12,23 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingRight="10dp"
+        android:orientation="vertical"
+        android:paddingBottom="5dp"
         android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp">
+        android:paddingRight="10dp"
+        android:paddingTop="5dp">
 
-       <ImageView
-           android:layout_width="60dp"
-           android:layout_height="60dp"
-           android:src="@drawable/people"/>
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/people"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dp"/>
 
     </LinearLayout>
 
@@ -31,59 +36,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingRight="10dp"
+        android:paddingBottom="5dp"
         android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp">
+        android:paddingRight="10dp"
+        android:paddingTop="5dp">
 
 
         <TextView
             android:id="@+id/userName"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="이름"
-            android:textSize="25dp" />
+            android:textColor="@color/colorGray"
+            android:textSize="25dp"
+            android:textAlignment="inherit"
+            android:textStyle="bold"
+            />
 
         <TextView
             android:id="@+id/book_date"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="예약날짜"
-            android:textColor="#00a7f5"
-            android:textSize="20dp" />
-
-
+            android:textSize="20dp"
+            android:textColor="@color/colorGray"
+            android:textAlignment="inherit"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
-
-
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp">
+        android:layout_gravity="center">
 
         <TextView
 
             android:id="@+id/usercount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
             android:background="#00a7f5"
+            android:gravity="center"
             android:text="1"
+            android:textAlignment="center"
             android:textColor="#ffffff"
-            android:textSize="30dp"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+
             ></TextView>
-
-
     </LinearLayout>
-
-
-
 
 
 </LinearLayout>
