@@ -1,6 +1,8 @@
 package com.example.administrator.project207;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
+import com.example.administrator.project207.utils.Constants;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,12 +12,12 @@ import java.util.Map;
 
 public class ReserveRequest extends StringRequest {
 
-    final static private String URL = "http://chlqkrtk2.iptime.org:3000/add_reservation";
+
     private Map<String, String> parameters;
 
     public ReserveRequest(String userID, String userPurpose, String Year, String Month, String Date, String Time, Response.Listener<String> listener)
     {
-        super(Method.POST, URL, listener, null);
+        super(Method.POST, Constants.POST_URLS.ADD_RESERVATION, listener, null);
         parameters = new HashMap<>();
         parameters.put("userID", userID);
         parameters.put("userPurpose",userPurpose);
