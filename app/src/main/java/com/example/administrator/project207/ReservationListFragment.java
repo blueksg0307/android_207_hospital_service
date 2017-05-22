@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.administrator.project207.utils.Constants;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -103,11 +105,11 @@ public class ReservationListFragment extends Fragment {
 
     class BackgroundTask extends AsyncTask<Void, Void, String>
     {
-        String target;
+        String target = Constants.POST_URLS.GET_RESERVATION;
 
         @Override
         protected void onPreExecute(){
-            target = "http://chlqkrtk2.iptime.org:3000/get_reservation";
+
         }
 
         @Override

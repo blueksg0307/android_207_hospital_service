@@ -2,6 +2,7 @@ package com.example.administrator.project207;
 
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
+import com.example.administrator.project207.utils.Constants;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,12 +13,11 @@ import java.util.Map;
 
 public class MyinfoEditRequest extends StringRequest {
 
-    final static private String URL = "http://chlqkrtk2.iptime.org:3000/Account_Edit";
     private Map<String, String> parameters;
 
     public MyinfoEditRequest(String userID, String userName, String userBirth, String userNumber, Response.Listener<String> listener)
     {
-        super(Method.POST, URL, listener, null);
+        super(Method.POST, Constants.POST_URLS.ACCOUNT_EDIT, listener, null);
         parameters = new HashMap<>();
         parameters.put("userID", userID);
         parameters.put("userName", userName);

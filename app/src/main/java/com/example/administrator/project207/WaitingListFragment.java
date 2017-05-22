@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -13,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.administrator.project207.utils.Constants;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -132,11 +135,11 @@ public class WaitingListFragment extends Fragment {
 
     class BackgroundTask extends AsyncTask<Void, Void, String>
     {
-        String target;
+        String target = Constants.POST_URLS.GET_WAITING;
 
         @Override
         protected void onPreExecute(){
-            target = "http://chlqkrtk2.iptime.org:3000/get_waiting";
+
         }
 
         @Override
