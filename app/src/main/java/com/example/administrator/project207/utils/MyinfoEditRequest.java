@@ -1,8 +1,9 @@
-package com.example.administrator.project207;
+package com.example.administrator.project207.utils;
 
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.example.administrator.project207.utils.Constants;
+import com.example.administrator.project207.utils.Requests;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +18,7 @@ public class MyinfoEditRequest extends StringRequest {
 
     public MyinfoEditRequest(String userID, String userName, String userBirth, String userNumber, Response.Listener<String> listener)
     {
-        super(Method.POST, Constants.POST_URLS.ACCOUNT_EDIT, listener, null);
+        super(Method.POST, Requests.POST_URLS.ACCOUNT_EDIT, listener, null);
         parameters = new HashMap<>();
         parameters.put("userID", userID);
         parameters.put("userName", userName);

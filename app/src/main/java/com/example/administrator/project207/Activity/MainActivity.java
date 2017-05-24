@@ -1,4 +1,4 @@
-package com.example.administrator.project207;
+package com.example.administrator.project207.Activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -7,10 +7,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -20,15 +17,13 @@ import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import com.estimote.sdk.SystemRequirementsChecker;
+import com.example.administrator.project207.R;
+import com.example.administrator.project207.utils.BeaconRequest;
+import com.example.administrator.project207.utils.CheckbookRequest;
+import com.example.administrator.project207.utils.HistoryRequest;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.List;
 import java.util.UUID;
 
@@ -148,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
         waitingList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CheckWaiting.class);
+                Intent intent = new Intent(MainActivity.this, CheckWaitingActivity.class);
                 MainActivity.this.startActivity(intent);
 
 

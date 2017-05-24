@@ -1,22 +1,21 @@
-package com.example.administrator.project207;
+package com.example.administrator.project207.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.administrator.project207.R;
+import com.example.administrator.project207.User;
+import com.example.administrator.project207.UserListAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
-import java.security.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-
-import static java.security.AccessController.getContext;
 
 public class HistoryActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.administrator.project207;
+package com.example.administrator.project207.Activity;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -10,6 +10,7 @@ import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import com.estimote.sdk.SystemRequirementsChecker;
+import com.example.administrator.project207.R;
 
 import java.util.List;
 import java.util.UUID;

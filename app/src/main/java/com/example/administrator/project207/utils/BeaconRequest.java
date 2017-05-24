@@ -1,8 +1,9 @@
-package com.example.administrator.project207;
+package com.example.administrator.project207.utils;
 
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.example.administrator.project207.utils.Constants;
+import com.example.administrator.project207.utils.Requests;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +18,7 @@ public class BeaconRequest extends StringRequest {
 
     public BeaconRequest(String beacon_uuid, String userid, Response.Listener<String> listener)
     {
-        super(Method.POST, Constants.POST_URLS.BEACON_CONNECT, listener, null);
+        super(Method.POST, Requests.POST_URLS.BEACON_CONNECT, listener, null);
         parameters = new HashMap<>();
         parameters.put("uuid", beacon_uuid);
         parameters.put("userid", userid);

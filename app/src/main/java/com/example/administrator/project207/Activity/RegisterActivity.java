@@ -1,20 +1,19 @@
-package com.example.administrator.project207;
+package com.example.administrator.project207.Activity;
 
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.administrator.project207.R;
+import com.example.administrator.project207.utils.RegisterRequest;
+import com.example.administrator.project207.utils.ValidateRequest;
 
 import org.json.JSONObject;
 

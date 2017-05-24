@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.administrator.project207.CheckbookActivity">
+    tools:context="com.example.administrator.project207.Activity.CheckbookActivity">
 
     <!-- TODO: Update blank fragment layout -->
 

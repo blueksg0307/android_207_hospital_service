@@ -1,7 +1,8 @@
-package com.example.administrator.project207;
+package com.example.administrator.project207.utils;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.example.administrator.project207.utils.Constants;
+import com.example.administrator.project207.utils.Requests;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +20,7 @@ public class RegisterRequest extends StringRequest {
 
     public RegisterRequest(String userID, String userPassword, String userName, String userBirth, String userEmail, Response.Listener<String> listener)
     {
-        super(Method.POST, Constants.POST_URLS.TEST01, listener, null);
+        super(Method.POST, Requests.POST_URLS.TEST01, listener, null);
 
         parameters = new HashMap<>();
         parameters.put("userid", userID);

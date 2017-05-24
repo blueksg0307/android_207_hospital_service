@@ -1,4 +1,4 @@
-package com.example.administrator.project207;
+package com.example.administrator.project207.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -13,7 +13,8 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-import com.estimote.sdk.SystemRequirementsChecker;
+import com.example.administrator.project207.R;
+import com.example.administrator.project207.utils.LoginRequest;
 
 import org.json.JSONObject;
 

@@ -12,24 +12,24 @@
         android:roundIcon="@mipmap/hospital"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ReserveActivity" />
-        <activity android:name=".MyinfoActivity" />
-        <activity android:name=".CheckbookActivity" />
-        <activity android:name=".HistoryActivity" />
+        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.ReserveActivity" />
+        <activity android:name=".Activity.MyinfoActivity" />
+        <activity android:name=".Activity.CheckbookActivity" />
+        <activity android:name=".Activity.HistoryActivity" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activity.SplashActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
-        <activity android:name=".SetDateActivity" />
-        <activity android:name=".CheckWaiting"></activity>
+        <activity android:name=".Activity.SetDateActivity" />
+        <activity android:name=".Activity.CheckWaitingActivity"></activity>
     </application>
 
 </manifest>

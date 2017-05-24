@@ -1,4 +1,4 @@
-package com.example.administrator.project207;
+package com.example.administrator.project207.Activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.administrator.project207.R;
 
 public class SetDateActivity extends AppCompatActivity {
 
