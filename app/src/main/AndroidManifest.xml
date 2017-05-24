@@ -30,6 +30,9 @@
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name=".Activity.SetDateActivity" />
         <activity android:name=".Activity.CheckWaitingActivity"></activity>
+        <activity android:name=".Activity.Pop"
+            android:theme="@style/AppTheme.pop"></activity>
+
     </application>
 
 </manifest>

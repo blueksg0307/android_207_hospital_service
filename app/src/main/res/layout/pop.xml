@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPaleGreen">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="프로그램 정보"
+        android:drawableLeft="@drawable/ic_star_black_24dp"
+        android:drawableStart="@drawable/ic_star_black_24dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/colorDarkGreen"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="프로그램 버젼 : 0.1 Ver"
+        android:drawableLeft="@drawable/ic_star_black_24dp"
+        android:drawableStart="@drawable/ic_star_black_24dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:background="@color/colorDarkGreen"
+        android:textColor="#ffffff"
+        />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="207LAB : http//chlqkrtk2.iptime.org"
+        android:drawableLeft="@drawable/ic_star_black_24dp"
+        android:drawableStart="@drawable/ic_star_black_24dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:background="@color/colorDarkGreen"
+        android:textColor="#ffffff"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="만든사람들"
+        android:drawableLeft="@drawable/ic_star_black_24dp"
+        android:drawableStart="@drawable/ic_star_black_24dp"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:background="@color/colorDarkGreen"
+        android:textColor="#ffffff"
+        />
+
+
+    </LinearLayout>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+
+
+
+
+                <com.example.administrator.project207.utils.CircleImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/kwang"
+                    app:civ_border_color="@color/colorPaleGreen"
+                    app:civ_border_width="2dp"
+                    />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="김선광"
+
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:background="@color/colorDarkGreen"
+                    android:textColor="#ffffff"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="수원대학교 207LAB "
+                    android:padding="5dp"
+                    android:textSize="15dp"
+                    android:background="@color/colorDarkGreen"
+                    android:textColor="#000000"
+                    />
+
+            </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+
+
+
+
+                <com.example.administrator.project207.utils.CircleImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/choi"
+                    app:civ_border_color="@color/colorPaleGreen"
+                    app:civ_border_width="2dp"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="최윤준"
+
+                        android:padding="5dp"
+                        android:textStyle="bold"
+                        android:background="@color/colorDarkGreen"
+                        android:textColor="#ffffff"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="수원대학교 207LAB "
+                        android:padding="5dp"
+                        android:textSize="15dp"
+                        android:background="@color/colorDarkGreen"
+                        android:textColor="#000000"
+                        />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal">
+
+
+
+
+                <com.example.administrator.project207.utils.CircleImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/duk"
+                    app:civ_border_color="@color/colorPaleGreen"
+                    app:civ_border_width="2dp"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="양덕규"
+
+                        android:padding="5dp"
+                        android:textStyle="bold"
+                        android:background="@color/colorDarkGreen"
+                        android:textColor="#ffffff"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="수원대학교 207LAB "
+                        android:padding="5dp"
+                        android:textSize="15dp"
+                        android:background="@color/colorDarkGreen"
+                        android:textColor="#000000"
+                        />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

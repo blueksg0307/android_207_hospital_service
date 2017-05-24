@@ -1,0 +1,58 @@
+[33mcommit d5565144b43de01654f7fcbeeccbd669f570efa2[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Tue May 23 02:52:22 2017 +0900
+
+    2017-05-23:02:51
+    
+    이름 안보이는거 수정. 아이콘이랑 앱이름 변경
+
+[33mcommit 89d742d8607e1f78cbaab3ca2046d2ce4b2e5013[m
+Merge: 3f4861e aa4dd5d
+Author: blueksg0307 <blueksg0307@gmail.com>
+Date:   Tue May 23 00:05:10 2017 +0900
+
+    Merge pull request #1 from awesometic/master
+    
+    First contribution
+
+[33mcommit aa4dd5dc3fa2084f8bf497d9eb40e0dadf9f337e[m
+Author: Awesometic <secugyu@gmail.com>
+Date:   Mon May 22 23:43:11 2017 +0900
+
+    apply .gitignore
+
+[33mcommit 0729c8ca34931b8d949e0c2a8033655303bdedad[m
+Author: Awesometic <secugyu@gmail.com>
+Date:   Mon May 22 23:38:02 2017 +0900
+
+    optimize source code by adding utils.Constants
+
+[33mcommit 9c85c7c4289c40d8fa2f9bcbbcc96abecb868100[m
+Author: Awesometic <secugyu@gmail.com>
+Date:   Mon May 22 23:13:51 2017 +0900
+
+    update .gitignore for android project
+
+[33mcommit 3f4861e9a21967bb32c09800efbeefe34c82ea25[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Mon May 22 14:12:32 2017 +0900
+
+    modify README
+
+[33mcommit d27cae9a87d76567abe9c8d5eec050bbc2ba4cbb[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Mon May 22 14:10:54 2017 +0900
+
+    add README
+
+[33mcommit 30cef36cf092d20c11a7eb402ebd629bc7ec1860[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Mon May 22 14:02:15 2017 +0900
+
+    init commit
+
+[33mcommit c2932278a6eca32d141bd0d725c883ac8fe01968[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Mon May 22 14:00:18 2017 +0900
+
+    :confetti_ball: Added .gitattributes & .gitignore files

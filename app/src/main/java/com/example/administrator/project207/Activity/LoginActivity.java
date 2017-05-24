@@ -43,7 +43,18 @@ public class LoginActivity extends AppCompatActivity {
         final EditText idText = (EditText) findViewById(R.id.idText);
         final EditText passwordText = (EditText) findViewById(R.id.passwordText);
         final Button loginButton = (Button) findViewById(R.id.loginButton);
+        final TextView AppInfo = (TextView) findViewById(R.id.AppInfo);
 
+        AppInfo.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(LoginActivity.this,Pop.class);
+                startActivity(intent);
+
+            }
+        });
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {

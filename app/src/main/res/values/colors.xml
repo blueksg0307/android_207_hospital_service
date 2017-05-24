@@ -6,4 +6,10 @@
     <color name="colorWarning">#EE55CB</color>
     <color name="colorGray">#8C8C8C</color>
     <color name="colorGreen">#A4C639</color>
+    <color name="colorLightGreen">#ADFF2F</color>
+    <color name="colorDarkGreen">#228B22</color>
+    <color name="colorPaleGreen">#09FB98</color>
+    <color name="colormediumspringGreen">#09FB98</color>
+    <color name="springgreen">#00FF7F</color>
+    <color name="LawnGreen">#7CFC00</color>
 </resources>
