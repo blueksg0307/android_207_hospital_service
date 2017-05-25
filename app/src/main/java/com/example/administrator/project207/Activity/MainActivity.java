@@ -1,8 +1,11 @@
 package com.example.administrator.project207.Activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +22,7 @@ import com.estimote.sdk.Region;
 import com.estimote.sdk.SystemRequirementsChecker;
 import com.example.administrator.project207.R;
 import com.example.administrator.project207.utils.BeaconRequest;
+import com.example.administrator.project207.utils.CheckPermission;
 import com.example.administrator.project207.utils.CheckbookRequest;
 import com.example.administrator.project207.utils.HistoryRequest;
 
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     private String userBirth;
     private String userNumber;
     private boolean finishReservation ;
+    private boolean beaconSuccess ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +59,17 @@ public class MainActivity extends AppCompatActivity {
         final ImageView waitingList   = (ImageView) findViewById(R.id.waitinglist);
         final ImageView history = (ImageView) findViewById(R.id.histroy);
 
-
         Intent Information = getIntent();
         userID = Information.getStringExtra("userID");
         userName = Information.getStringExtra("userName");
         userBirth = Information.getStringExtra("userBirth");
         userNumber = Information.getStringExtra("userNumber");
+
+        //If each permission have not been checked, not going to be working.
+        //However checked, going to store Permission success into CheckPermission class
+        if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+            CheckPermission.readStoragePermission = true ;
+        }
 
 
 
@@ -198,7 +209,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume(){
         super.onResume();
         SystemRequirementsChecker.checkWithDefaultDialogs(this);
-        finishReservation = false ;
         beaconManager = new BeaconManager(this);
         beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
             @Override
@@ -217,7 +227,11 @@ public class MainActivity extends AppCompatActivity {
                     beacon_uuid = nearestBeacon.getProximityUUID().toString();
                     Intent Information = getIntent();
                     userID = Information.getStringExtra("userID");
-                   if(finishReservation = false){ new BackgroundTask().execute();}
+                    if(!beaconSuccess) {
+
+                        new BackgroundTask().execute();
+
+                    }
 
                 }
             }
@@ -226,6 +240,8 @@ public class MainActivity extends AppCompatActivity {
         region = new Region("ranged region",
                 UUID.fromString("43CBDA6E-28FA-4F5B-AF12-416CAF3E3737"),
                 null,null);
+
+
     }
 
     @Override
@@ -249,34 +265,34 @@ public class MainActivity extends AppCompatActivity {
 
     class BackgroundTask extends AsyncTask<Void, Void, String> {
 
-        private boolean success ;
+
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
+                    beaconSuccess = jsonObject.getBoolean("success");
 
-                    success = jsonObject.getBoolean("success");
-                    if(success){
+                    //After Recognizing ReservationSuccess with beaconConnection, Message is going to be happend.
+                    if(beaconSuccess){
 
-                        Toast.makeText(getApplicationContext(),"진료접수가 정상적으로 되었습니다",Toast.LENGTH_SHORT).show();
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                        builder.setMessage("진료접수가 정상적으로 되었습니다. 진료순서를 확인하시겠습니까?")
-                                .setPositiveButton("네", null)
-                                .setNegativeButton("아니요",null)
+                        builder.setMessage("진료접수가 성공하였습니다. 예약을 확인하시겠습니까?.")
+                                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                        Intent Intent = new Intent(MainActivity.this, MyinfoActivity.class);
+                                        startActivity(Intent);
+
+                                    }
+                                })
+                                .setNegativeButton("아니요", null)
                                 .create()
                                 .show();
-
                     }
-                    else{
-                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                        builder.setMessage("진료접수가 실패하였습니다. 직접 진료접수를 진행하세요.")
-                                .setPositiveButton("확인", null)
-                                .create()
-                                .show();
 
-                    }
                 } catch (Exception e) {
 
                     e.printStackTrace();}
@@ -288,17 +304,14 @@ public class MainActivity extends AppCompatActivity {
 
             try {
 
-                if(!success) {
+
                     BeaconRequest beaconRequest = new BeaconRequest(beacon_uuid, userID, responseListener);
                     RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
                     queue.add(beaconRequest);
                     Thread.sleep(300000);
 
-                }
-                else{
 
-                    finishReservation = true ;
-                }
+
             }catch (Exception e){
 
                 e.printStackTrace();
