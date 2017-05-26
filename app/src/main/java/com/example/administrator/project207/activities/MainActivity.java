@@ -1,4 +1,4 @@
-package com.example.administrator.project207.Activity;
+package com.example.administrator.project207.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;

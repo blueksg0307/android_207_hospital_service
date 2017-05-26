@@ -1,4 +1,4 @@
-package com.example.administrator.project207.Fragment;
+package com.example.administrator.project207.fragments;
 
 import android.net.Uri;
 import android.os.AsyncTask;

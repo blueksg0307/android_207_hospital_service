@@ -13,25 +13,25 @@
         android:roundIcon="@mipmap/hospital"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.LoginActivity">
+        <activity android:name=".activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.RegisterActivity" />
-        <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.ReserveActivity" />
-        <activity android:name=".Activity.MyinfoActivity" />
-        <activity android:name=".Activity.CheckbookActivity" />
-        <activity android:name=".Activity.HistoryActivity" />
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.ReserveActivity" />
+        <activity android:name=".activities.MyinfoActivity" />
+        <activity android:name=".activities.CheckbookActivity" />
+        <activity android:name=".activities.HistoryActivity" />
         <activity
-            android:name=".Activity.SplashActivity"
+            android:name=".activities.SplashActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
-        <activity android:name=".Activity.SetDateActivity" />
-        <activity android:name=".Activity.CheckWaitingActivity"></activity>
-        <activity android:name=".Activity.Pop"
+        <activity android:name=".activities.SetDateActivity" />
+        <activity android:name=".activities.CheckWaitingActivity"></activity>
+        <activity android:name=".activities.Pop"
             android:theme="@style/AppTheme.pop"></activity>
 
     </application>

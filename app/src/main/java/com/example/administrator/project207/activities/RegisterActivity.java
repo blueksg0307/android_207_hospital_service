@@ -1,4 +1,4 @@
-package com.example.administrator.project207.Activity;
+package com.example.administrator.project207.activities;
 
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;

@@ -1,11 +1,7 @@
-package com.example.administrator.project207.Activity;
+package com.example.administrator.project207.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -24,8 +20,6 @@ import com.example.administrator.project207.utils.CheckPermission;
 import com.example.administrator.project207.utils.MyinfoEditRequest;
 
 import org.json.JSONObject;
-
-import static android.R.attr.data;
 
 public class MyinfoActivity extends AppCompatActivity {
 
