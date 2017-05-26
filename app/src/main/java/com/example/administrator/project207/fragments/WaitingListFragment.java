@@ -134,7 +134,7 @@ public class WaitingListFragment extends Fragment {
 
     class BackgroundTask extends AsyncTask<Void, Void, String>
     {
-        String target = Constants.POST_URLS.GET_WAITING;
+        String target = Constants.POST_REQUEST_URLS.GET_WAITING;
 
         @Override
         protected void onPreExecute(){

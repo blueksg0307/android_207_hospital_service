@@ -5,21 +5,29 @@ package com.example.administrator.project207.utils;
  */
 
 public class Constants {
+    
+    public static final String HOST = "http://chlqkrtk2.iptime.org:3000";
 
-    public interface POST_URLS {
-        String LOGIN = "http://chlqkrtk2.iptime.org:3000/login";
-        String REGISTER_VALIDATE = "http://chlqkrtk2.iptime.org:3000/mobile/register_validate";
-        String ACCOUNT_EDIT = "http://chlqkrtk2.iptime.org:3000/Account_Edit";
+    public interface POST_REQUEST_URLS {
+        String LOGIN = HOST + "/login";
+        String REGISTER_VALIDATE = HOST + "/mobile/register_validate";
+        String ACCOUNT_EDIT = HOST + "/Account_Edit";
 
-        String BEACON_CONNECT = "http://chlqkrtk2.iptime.org:3000/beacon_connect";
+        String BEACON_CONNECT = HOST + "/beacon_connect";
 
-        String GET_RESERVATION = "http://chlqkrtk2.iptime.org:3000/get_reservation";
-        String ADD_RESERVATION = "http://chlqkrtk2.iptime.org:3000/add_reservation";
-        String CHECK_RESERVATION = "http://chlqkrtk2.iptime.org:3000/check_reservation";
+        String GET_RESERVATION = HOST + "/get_reservation";
+        String ADD_RESERVATION = HOST + "/add_reservation";
+        String CHECK_RESERVATION = HOST + "/check_reservation";
 
-        String GET_HISTORY = "http://chlqkrtk2.iptime.org:3000/get_history";
-        String GET_WAITING = "http://chlqkrtk2.iptime.org:3000/get_waiting";
+        String GET_HISTORY = HOST + "/get_history";
+        String GET_WAITING = HOST + "/get_waiting";
 
-        String TEST01 = "http://chlqkrtk2.iptime.org:3000/test";
+        // Register new account
+        String TEST01 = HOST + "/test";
+    }
+
+    // Change tags to suit your appetite
+    public interface POST_REQUEST_TAGS {
+        String DEFAULT = "default";
     }
 }

@@ -10,24 +10,25 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
 import com.example.administrator.project207.R;
-import com.example.administrator.project207.utils.LoginRequest;
+import com.example.administrator.project207.utils.Constants;
+import com.example.administrator.project207.utils.ServerRequestQueue;
 
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private AlertDialog dialog ;
-
-
+    private ServerRequestQueue mRequestQueue;
+    private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        mRequestQueue = ServerRequestQueue.getInstance(getApplicationContext());
+
         startActivity(new Intent(this,SplashActivity.class));
         TextView signupButton = (TextView) findViewById(R.id.signupButton);
         signupButton.setOnClickListener(new View.OnClickListener() {
@@ -100,9 +101,8 @@ public class LoginActivity extends AppCompatActivity {
                             e.printStackTrace();}
                     }
                 };
-                LoginRequest loginRequest = new LoginRequest(userID, userPassword, isphone, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
-                queue.add(loginRequest);
+
+                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.LOGIN, responseListener, null, userID, userPassword, isphone);
             }
         });
     }
