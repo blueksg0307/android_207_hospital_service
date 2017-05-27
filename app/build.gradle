@@ -31,4 +31,9 @@ dependencies {
     compile 'com.android.support:design:25.3.0'
     compile 'com.estimote:sdk:0.11.1@aar'
     testCompile 'junit:junit:4.12'
+    // 구글 파이어베이스 서버 연동 모듈
+    compile 'com.google.firebase:firebase-core:10.2.6'
+    compile 'com.google.firebase:firebase-messaging:10.2.6'
+    //
 }
+apply plugin: 'com.google.gms.google-services'
