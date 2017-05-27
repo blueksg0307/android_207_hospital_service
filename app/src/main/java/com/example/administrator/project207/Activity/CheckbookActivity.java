@@ -46,6 +46,8 @@ public class CheckbookActivity extends AppCompatActivity {
             String Purpose;
             int count = 0 ;
 
+
+
             while (count < jsonArray.length())
             {
                 JSONObject object = jsonArray.getJSONObject(count);
@@ -55,14 +57,16 @@ public class CheckbookActivity extends AppCompatActivity {
                 User user = new User(usercount, bookDate, Purpose);
                 userList.add(user);
                 count++;
+
+
             }
             if(count ==0){
                 AlertDialog dialog ;
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 dialog = builder.setMessage("진료 기록이 없습니다")
-                        .setPositiveButton("확인", null)
-                        .create();
-                dialog.show();
+                      .setPositiveButton("확인", null)
+                      .create();
+                      dialog.show();
             }
 
             adapter.notifyDataSetChanged();

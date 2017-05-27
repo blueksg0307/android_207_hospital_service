@@ -50,7 +50,7 @@ public class HistoryActivity extends AppCompatActivity {
             {
                 JSONObject object = jsonArray.getJSONObject(count);
                 int usercount = count + 1;
-                bookDate = object.getString("wnattime");
+                bookDate = object.getString("wanttime");
                 Purpose = object.getString("purpose");
                 User user = new User(usercount, bookDate, Purpose);
                 userList.add(user);

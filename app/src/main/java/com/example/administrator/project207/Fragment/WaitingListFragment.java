@@ -72,6 +72,12 @@ public class WaitingListFragment extends Fragment {
 
     }
 
+    @Override
+    public void onResume(){
+       super.onResume();
+
+
+    }
 
     private ListView userListView ;
     private UserListAdapter adapter ;
@@ -82,12 +88,11 @@ public class WaitingListFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle b){
         super.onActivityCreated(b);
-
-                new BackgroundTask().execute();
-                userListView = (ListView) getView().findViewById(R.id.UserListView);
-                userList = new ArrayList<>();
-                adapter = new UserListAdapter(getContext().getApplicationContext(), userList);
-                userListView.setAdapter(adapter);
+        new BackgroundTask().execute();
+        userListView = (ListView) getView().findViewById(R.id.UserListView);
+        userList = new ArrayList<>();
+        adapter = new UserListAdapter(getContext().getApplicationContext(), userList);
+        userListView.setAdapter(adapter);
 
 
     }
@@ -210,12 +215,6 @@ public class WaitingListFragment extends Fragment {
                 e.printStackTrace();
 
             }
-
-
-
         }
     }
-
-
-
 }
