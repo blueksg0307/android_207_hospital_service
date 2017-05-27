@@ -1,4 +1,4 @@
-package com.example.administrator.project207.Activity;
+package com.example.administrator.project207.activities;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
@@ -10,8 +10,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.administrator.project207.R;
-import com.example.administrator.project207.Fragment.ReservationListFragment;
-import com.example.administrator.project207.Fragment.WaitingListFragment;
+import com.example.administrator.project207.fragments.ReservationListFragment;
+import com.example.administrator.project207.fragments.WaitingListFragment;
 
 public class CheckWaitingActivity extends AppCompatActivity {
 

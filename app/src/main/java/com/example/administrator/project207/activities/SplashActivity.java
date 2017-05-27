@@ -1,18 +1,15 @@
-package com.example.administrator.project207.Activity;
+package com.example.administrator.project207.activities;
 
 import android.app.Activity;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
 
-import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import com.estimote.sdk.SystemRequirementsChecker;
 import com.example.administrator.project207.R;
 
-import java.util.List;
 import java.util.UUID;
 
 public class SplashActivity extends Activity {

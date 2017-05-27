@@ -1,4 +1,4 @@
-package com.example.administrator.project207.Activity;
+package com.example.administrator.project207.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,18 +13,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
 import com.estimote.sdk.Beacon;
 import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import com.estimote.sdk.SystemRequirementsChecker;
 import com.example.administrator.project207.R;
-import com.example.administrator.project207.utils.BeaconRequest;
 import com.example.administrator.project207.utils.CheckPermission;
-import com.example.administrator.project207.utils.CheckbookRequest;
-import com.example.administrator.project207.utils.HistoryRequest;
+import com.example.administrator.project207.utils.Constants;
+import com.example.administrator.project207.utils.ServerRequestQueue;
 
 import org.json.JSONObject;
 
@@ -32,6 +29,8 @@ import java.util.List;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ServerRequestQueue mRequestQueue;
 
     private BeaconManager beaconManager ;
     private Region region;
@@ -52,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mRequestQueue = ServerRequestQueue.getInstance(getApplicationContext());
+
         final ImageView booking  = (ImageView) findViewById(R.id.booking);
         final ImageView myinfo   = (ImageView) findViewById(R.id.myinfo);
         final ImageView callbook = (ImageView) findViewById(R.id.callbook);
@@ -144,9 +146,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 };
 
-                HistoryRequest historyRequest = new HistoryRequest(userID, histroyresponseListener);
-                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-                queue.add(historyRequest);
+                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.GET_HISTORY, histroyresponseListener, null, userID);
 
             }
         });
@@ -197,9 +197,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 };
-                CheckbookRequest checkbookRequest = new CheckbookRequest(userID, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-                queue.add(checkbookRequest);
+                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.CHECK_RESERVATION, responseListener, null, userID);
             }
         });
 
@@ -304,11 +302,8 @@ public class MainActivity extends AppCompatActivity {
 
             try {
 
-
-                    BeaconRequest beaconRequest = new BeaconRequest(beacon_uuid, userID, responseListener);
-                    RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-                    queue.add(beaconRequest);
-                    Thread.sleep(300000);
+                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.BEACON_CONNECT, responseListener, null, beacon_uuid, userID);
+                Thread.sleep(300000);
 
 
 

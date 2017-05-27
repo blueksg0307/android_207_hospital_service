@@ -1,4 +1,4 @@
-package com.example.administrator.project207.Activity;
+package com.example.administrator.project207.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -11,16 +11,17 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
 import com.example.administrator.project207.R;
-import com.example.administrator.project207.utils.ReserveRequest;
+import com.example.administrator.project207.utils.Constants;
+import com.example.administrator.project207.utils.ServerRequestQueue;
 
 import org.json.JSONObject;
 
 
 public class ReserveActivity extends AppCompatActivity {
+
+    private ServerRequestQueue mRequestQueue;
 
     private String userID ;
     private String userName;
@@ -41,6 +42,8 @@ public class ReserveActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reserve);
+
+        mRequestQueue = ServerRequestQueue.getInstance(getApplicationContext());
 
         final EditText idText = (EditText) findViewById(R.id.idText);
         final EditText nameText = (EditText) findViewById(R.id.nametext);
@@ -137,9 +140,8 @@ public class ReserveActivity extends AppCompatActivity {
                         }
                     }
                 };
-                ReserveRequest reserveRequest = new ReserveRequest(userID, userPurpose, reserved_year, reserved_month, reserved_date, reserved_time, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(ReserveActivity.this);
-                queue.add(reserveRequest);
+
+                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.ADD_RESERVATION, responseListener, null, userID, userPurpose, reserved_year, reserved_month, reserved_date, reserved_time);
 
             }
         });
