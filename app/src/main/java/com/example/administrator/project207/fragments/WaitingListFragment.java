@@ -1,4 +1,4 @@
-package com.example.administrator.project207.Fragment;
+package com.example.administrator.project207.fragments;
 
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -139,7 +139,7 @@ public class WaitingListFragment extends Fragment {
 
     class BackgroundTask extends AsyncTask<Void, Void, String>
     {
-        String target = Constants.POST_URLS.GET_WAITING;
+        String target = Constants.POST_REQUEST_URLS.GET_WAITING;
 
         @Override
         protected void onPreExecute(){

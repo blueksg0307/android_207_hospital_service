@@ -9,7 +9,7 @@
     app:layout_collapseMode="parallax"
     app:layout_collapseParallaxMultiplier="1.0"
     app:layout_scrollFlags="scroll"
-    tools:context="com.example.administrator.project207.Activity.MainActivity">
+    tools:context="com.example.administrator.project207.activities.MainActivity">
 
 
     <android.support.v7.widget.Toolbar

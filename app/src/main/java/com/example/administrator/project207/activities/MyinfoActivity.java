@@ -1,11 +1,7 @@
-package com.example.administrator.project207.Activity;
+package com.example.administrator.project207.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,25 +12,25 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
 import com.example.administrator.project207.R;
 import com.example.administrator.project207.utils.CheckPermission;
-import com.example.administrator.project207.utils.MyinfoEditRequest;
+import com.example.administrator.project207.utils.Constants;
+import com.example.administrator.project207.utils.ServerRequestQueue;
 
 import org.json.JSONObject;
 
-import static android.R.attr.data;
-
 public class MyinfoActivity extends AppCompatActivity {
 
+    private ServerRequestQueue mRequestQueue;
     private AlertDialog dialog ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_myinfo);
+
+        mRequestQueue = ServerRequestQueue.getInstance(getApplicationContext());
 
         Button Editbutton = (Button) findViewById(R.id.editbutton);
         Button Finishbutton = (Button) findViewById(R.id.finishbutton);
@@ -239,10 +235,7 @@ public class MyinfoActivity extends AppCompatActivity {
                                               }
                                           };
 
-
-                                          MyinfoEditRequest myinfoEditRequest = new MyinfoEditRequest(userID, userName, userBirth, userNumber, responseListener);
-                                          RequestQueue queue = Volley.newRequestQueue(MyinfoActivity.this);
-                                          queue.add(myinfoEditRequest);
+                                          mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.ACCOUNT_EDIT, responseListener, null, userID, userName, userBirth, userNumber);
 
                                       }
                                   })

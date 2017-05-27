@@ -1,4 +1,4 @@
-package com.example.administrator.project207.Activity;
+package com.example.administrator.project207.activities;
 
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -8,16 +8,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
 import com.example.administrator.project207.R;
-import com.example.administrator.project207.utils.RegisterRequest;
-import com.example.administrator.project207.utils.ValidateRequest;
+import com.example.administrator.project207.utils.Constants;
+import com.example.administrator.project207.utils.ServerRequestQueue;
 
 import org.json.JSONObject;
 
 public class RegisterActivity extends AppCompatActivity {
+
+    private ServerRequestQueue mRequestQueue;
 
     private String userID;
     private String userPassword;
@@ -34,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        mRequestQueue = ServerRequestQueue.getInstance(getApplicationContext());
 
         final EditText idText = (EditText) findViewById(R.id.idText);
         final EditText passwordText = (EditText) findViewById(R.id.passwordText);
@@ -97,9 +98,8 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     }
                 };
-                ValidateRequest validateRequest = new ValidateRequest(userID, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
-                queue.add(validateRequest);
+
+                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.REGISTER_VALIDATE, responseListener, null, userID);
             }
         });
 
@@ -178,9 +178,8 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     }
                 };
-                RegisterRequest registerRequest = new RegisterRequest(userID, userPassword, userName, userBirth, userEmail, responseListener);
-                RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
-                queue.add(registerRequest);
+
+                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.TEST01, responseListener, null, userID, userPassword, userName, userBirth, userEmail);
             }
         });
     }

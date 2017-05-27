@@ -1,4 +1,4 @@
-package com.example.administrator.project207.Fragment;
+package com.example.administrator.project207.fragments;
 
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -107,7 +107,7 @@ public class ReservationListFragment extends Fragment {
 
     class BackgroundTask extends AsyncTask<Void, Void, String>
     {
-        String target = Constants.POST_URLS.GET_RESERVATION;
+        String target = Constants.POST_REQUEST_URLS.GET_RESERVATION;
 
         @Override
         protected void onPreExecute(){

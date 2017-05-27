@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.administrator.project207.Activity.HistoryActivity">
+    tools:context="com.example.administrator.project207.activities.HistoryActivity">
 
     <!-- TODO: Update blank fragment layout -->
 
