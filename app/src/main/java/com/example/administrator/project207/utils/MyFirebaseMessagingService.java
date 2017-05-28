@@ -12,6 +12,8 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.support.v4.app.NotificationCompat;
 
+import com.example.administrator.project207.R;
+import com.example.administrator.project207.activities.MainActivity;
 import com.google.firebase.messaging.RemoteMessage;
 
 
@@ -35,7 +37,7 @@ public class MyFirebaseMessagingService extends com.google.firebase.messaging.Fi
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("FCM Push Test")
+                .setContentTitle("동네병원")
                 .setContentText(messageBody)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)

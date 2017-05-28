@@ -22,6 +22,8 @@ import com.example.administrator.project207.R;
 import com.example.administrator.project207.utils.CheckPermission;
 import com.example.administrator.project207.utils.Constants;
 import com.example.administrator.project207.utils.ServerRequestQueue;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONObject;
 
@@ -74,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+        //FireBase Testing
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+        FirebaseInstanceId.getInstance().getToken();
+        //
 
 
         myinfo.setOnClickListener(new View.OnClickListener() {

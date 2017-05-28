@@ -34,6 +34,7 @@ dependencies {
     // 구글 파이어베이스 서버 연동 모듈
     compile 'com.google.firebase:firebase-core:10.2.6'
     compile 'com.google.firebase:firebase-messaging:10.2.6'
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
     //
 }
 apply plugin: 'com.google.gms.google-services'
