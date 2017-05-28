@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorGreen"
+            android:background="@color/GOLD"
             android:orientation="vertical">
 
 
@@ -28,7 +28,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Sign up"
+                android:text="회원가입"
                 android:textColor="#ffffff"
                 android:textSize="30dp"
                 android:textStyle="bold"></TextView>
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginRight="10dp"
-                    android:background="@color/colorGreen"
+                    android:background="@color/GOLD"
                     android:drawableLeft="@drawable/ic_person_add_black_24dp"
                     android:drawableStart="@drawable/ic_person_add_black_24dp"
                     android:hint="아이디"
@@ -73,7 +73,7 @@
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:background="@color/colorWarning"
-                    android:text="check"
+                    android:text="중복확인"
                     android:textColor="#ffffff"
                     android:textSize="15dp"
                     android:textStyle="bold" />
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorGreen"
+                android:background="@color/GOLD"
                 android:drawableLeft="@drawable/ic_lock_black_24dp"
                 android:drawableStart="@drawable/ic_lock_black_24dp"
                 android:hint="비밀번호"
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorGreen"
+                android:background="@color/GOLD"
                 android:drawableLeft="@drawable/ic_edit_black_24dp"
                 android:drawableStart="@drawable/ic_edit_black_24dp"
                 android:hint="이름"
@@ -121,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorGreen"
+                android:background="@color/GOLD"
                 android:drawableLeft="@drawable/ic_cake_black_24dp"
                 android:drawableStart="@drawable/ic_cake_black_24dp"
                 android:hint="생년월일"
@@ -139,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:background="@color/colorGreen"
+                android:background="@color/GOLD"
                 android:drawableLeft="@drawable/ic_lock_black_24dp"
                 android:drawableStart="@drawable/ic_lock_black_24dp"
                 android:hint="이메일"
@@ -158,7 +158,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="@color/colorGray"
-                android:text="Summit"
+                android:text="가입완료"
                 android:textColor="#ffffff"
                 android:textSize="20dp"
                 android:textStyle="bold" />

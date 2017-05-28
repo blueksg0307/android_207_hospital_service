@@ -103,6 +103,7 @@ public class ServerRequestQueue {
                         Map<String, String> parameters = new HashMap<>();
                         parameters.put("uuid", params[0]);
                         parameters.put("userid", params[1]);
+                        parameters.put("userToken", params[2]);
 
                         return parameters;
                     }

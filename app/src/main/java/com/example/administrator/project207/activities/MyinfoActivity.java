@@ -40,7 +40,7 @@ public class MyinfoActivity extends AppCompatActivity {
         final EditText Birthtext = (EditText) findViewById(R.id.Birthtext);
         final EditText Phonetext = (EditText) findViewById(R.id.Phonetext);
         final ImageView UserImage = (ImageView) findViewById(R.id.UserImage);
-        final Button addProfile = (Button) findViewById(R.id.addProfile);
+       // final Button addProfile = (Button) findViewById(R.id.addProfile);
         Intent intent = getIntent();
         String userID = intent.getStringExtra("userID");
         String userName = intent.getStringExtra("userName");
@@ -61,7 +61,7 @@ public class MyinfoActivity extends AppCompatActivity {
         }
 */
 
-        addProfile.setOnClickListener(new View.OnClickListener() {
+       /* addProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CheckPermission checkPermission = (CheckPermission)getApplicationContext();
@@ -108,21 +108,21 @@ public class MyinfoActivity extends AppCompatActivity {
             }
         }
 */
-        IDtext.setText(userID);
+        IDtext.setText("아이디: " + userID);
         IDtext.setEnabled(false);
-        IDtext.setBackgroundColor(getResources().getColor(R.color.colorGray));
+
 
         Nametext.setText(userName);
         Nametext.setEnabled(false);
-        Nametext.setBackgroundColor(getResources().getColor(R.color.colorGray));
 
-        Birthtext.setText(userBirth);
+
+        Birthtext.setText("생년월일: " + userBirth);
         Birthtext.setEnabled(false);
-        Birthtext.setBackgroundColor(getResources().getColor(R.color.colorGray));
 
-        Phonetext.setText(userNumber);
+
+        Phonetext.setText("전화번호: " + userNumber);
         Phonetext.setEnabled(false);
-        Phonetext.setBackgroundColor(getResources().getColor(R.color.colorGray));
+
 
 
         Editbutton.setOnClickListener(new View.OnClickListener() {

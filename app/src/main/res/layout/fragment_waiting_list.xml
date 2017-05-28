@@ -8,9 +8,6 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-
-
-
     <ListView
         android:id="@+id/UserListView"
         android:layout_width="match_parent"

@@ -9,6 +9,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ import com.estimote.sdk.SystemRequirementsChecker;
 import com.example.administrator.project207.R;
 import com.example.administrator.project207.utils.CheckPermission;
 import com.example.administrator.project207.utils.Constants;
+import com.example.administrator.project207.Service.MyFirebaseInstanceIDService;
 import com.example.administrator.project207.utils.ServerRequestQueue;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private String userName;
     private String userBirth;
     private String userNumber;
+    private String userToken;
     private boolean finishReservation ;
     private boolean beaconSuccess ;
 
@@ -78,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
         //FireBase Testing
         FirebaseMessaging.getInstance().subscribeToTopic("news");
-        FirebaseInstanceId.getInstance().getToken();
+        userToken = FirebaseInstanceId.getInstance().getToken().toString();
         //
 
 
@@ -110,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Uri uri = Uri.parse("tel:010-7759-5051");
+                Uri uri = Uri.parse("tel:043-494-5451");
                 Intent intent = new Intent(Intent.ACTION_DIAL,uri);
                 startActivity(intent);
 
@@ -145,8 +148,8 @@ public class MainActivity extends AppCompatActivity {
                             else{
 
                                 Toast.makeText(MainActivity.this,"진료기록이 없습니다",Toast.LENGTH_SHORT).show();
-                            }
-                        } catch (Exception e) {
+                        }
+                    } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
@@ -180,8 +183,6 @@ public class MainActivity extends AppCompatActivity {
                         try {
 
                             JSONObject jsonObject = new JSONObject(response);
-                            Toast.makeText(MainActivity.this, jsonObject.toString(),Toast.LENGTH_LONG).show();
-
                             if(!(jsonObject.equals(""))) {
 
                                 Intent Intent = new Intent(MainActivity.this, CheckbookActivity.class);
@@ -231,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
                     beacon_uuid = nearestBeacon.getProximityUUID().toString();
                     Intent Information = getIntent();
                     userID = Information.getStringExtra("userID");
-                    if(!beaconSuccess) {
+                    if(!finishReservation) {
 
                         new BackgroundTask().execute();
 
@@ -281,13 +282,14 @@ public class MainActivity extends AppCompatActivity {
                     //After Recognizing ReservationSuccess with beaconConnection, Message is going to be happend.
                     if(beaconSuccess){
 
+                        finishReservation = true ;
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder.setMessage("진료접수가 성공하였습니다. 예약을 확인하시겠습니까?.")
                                 .setPositiveButton("확인", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
 
-                                        Intent Intent = new Intent(MainActivity.this, MyinfoActivity.class);
+                                        Intent Intent = new Intent(MainActivity.this, CheckbookActivity.class);
                                         startActivity(Intent);
 
                                     }
@@ -308,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
 
             try {
 
-                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.BEACON_CONNECT, responseListener, null, beacon_uuid, userID);
+                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.BEACON_CONNECT, responseListener, null, beacon_uuid, userID, userToken);
                 Thread.sleep(300000);
 
 

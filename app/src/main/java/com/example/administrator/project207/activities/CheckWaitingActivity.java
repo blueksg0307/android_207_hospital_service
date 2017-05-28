@@ -22,8 +22,6 @@ public class CheckWaitingActivity extends AppCompatActivity {
 
         final Button ReservationList = (Button) findViewById(R.id.reservationlistFragment);
         final Button WaitingList = (Button) findViewById(R.id.waitinglistFragment);
-        final LinearLayout notice = (LinearLayout) findViewById(R.id.notice);
-
         Intent intent = getIntent();
         final String result = intent.getStringExtra("userList");
 
@@ -32,7 +30,7 @@ public class CheckWaitingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                notice.setVisibility(View.GONE);
+
                 ReservationList.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                 WaitingList.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 FragmentManager fragmentManager = getSupportFragmentManager();
@@ -47,7 +45,7 @@ public class CheckWaitingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                notice.setVisibility(View.GONE);
+
                 WaitingList.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                 ReservationList.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 FragmentManager fragmentManager = getSupportFragmentManager();

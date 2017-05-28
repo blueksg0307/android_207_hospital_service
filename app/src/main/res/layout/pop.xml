@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPaleGreen">
+    android:background="@color/GOLD">
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
         android:padding="5dp"
         android:layout_gravity="center"
         android:textStyle="bold"
-        android:textColor="@color/colorDarkGreen"
+        android:textColor="@color/colorGray"
         />
 
     <TextView
@@ -33,7 +33,7 @@
         android:layout_marginBottom="10dp"
         android:padding="5dp"
         android:textStyle="bold"
-        android:background="@color/colorDarkGreen"
+        android:background="@color/colorGray"
         android:textColor="#ffffff"
         />
 
@@ -50,7 +50,7 @@
         android:layout_marginBottom="10dp"
         android:padding="5dp"
         android:textStyle="bold"
-        android:background="@color/colorDarkGreen"
+        android:background="@color/colorGray"
         android:textColor="#ffffff"
         />
 
@@ -70,7 +70,7 @@
         android:drawableStart="@drawable/ic_star_black_24dp"
         android:padding="5dp"
         android:textStyle="bold"
-        android:background="@color/colorDarkGreen"
+        android:background="@color/colorGray"
         android:textColor="#ffffff"
         />
 
@@ -104,7 +104,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/kwang"
-                    app:civ_border_color="@color/colorPaleGreen"
+                    app:civ_border_color="@color/YELLOW"
                     app:civ_border_width="2dp"
                     />
 
@@ -121,10 +121,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="김선광"
-
-                    android:padding="5dp"
                     android:textStyle="bold"
-                    android:background="@color/colorDarkGreen"
+                    android:padding="5dp"
+                    android:background="@color/colorGray"
                     android:textColor="#ffffff"
                     />
 
@@ -134,8 +133,9 @@
                     android:text="수원대학교 207LAB "
                     android:padding="5dp"
                     android:textSize="15dp"
-                    android:background="@color/colorDarkGreen"
-                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:background="@color/colorGray"
+                    android:textColor="#ffffff"
                     />
 
             </LinearLayout>
@@ -160,7 +160,7 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/choi"
-                    app:civ_border_color="@color/colorPaleGreen"
+                    app:civ_border_color="@color/YELLOW"
                     app:civ_border_width="2dp"
                     />
 
@@ -177,10 +177,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="최윤준"
-
                         android:padding="5dp"
                         android:textStyle="bold"
-                        android:background="@color/colorDarkGreen"
+                        android:background="@color/colorGray"
                         android:textColor="#ffffff"
                         />
 
@@ -190,8 +189,9 @@
                         android:text="수원대학교 207LAB "
                         android:padding="5dp"
                         android:textSize="15dp"
-                        android:background="@color/colorDarkGreen"
-                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:background="@color/colorGray"
+                        android:textColor="#ffffff"
                         />
 
                 </LinearLayout>
@@ -233,10 +233,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="양덕규"
-
                         android:padding="5dp"
                         android:textStyle="bold"
-                        android:background="@color/colorDarkGreen"
+                        android:background="@color/colorGray"
                         android:textColor="#ffffff"
                         />
 
@@ -246,8 +245,9 @@
                         android:text="수원대학교 207LAB "
                         android:padding="5dp"
                         android:textSize="15dp"
-                        android:background="@color/colorDarkGreen"
-                        android:textColor="#000000"
+                        android:textStyle="bold"
+                        android:background="@color/colorGray"
+                        android:textColor="#ffffff"
                         />
 
                 </LinearLayout>

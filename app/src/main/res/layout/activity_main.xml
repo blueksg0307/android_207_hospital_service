@@ -16,7 +16,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorGreen"
+        android:background="@color/GOLD"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
@@ -24,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="115dp"
         android:layout_marginTop="70dp"
+        android:layout_marginBottom="10dp"
         android:layout_weight="0.06"
         android:orientation="horizontal">
 
@@ -31,6 +32,8 @@
             android:id="@+id/myinfo"
             android:layout_width="match_parent"
             android:layout_height="120dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
             android:src="@drawable/managemyinfo" />
 
@@ -39,6 +42,8 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_weight="1"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:src="@drawable/book" />
 
     </LinearLayout>
@@ -47,6 +52,8 @@
         android:layout_width="match_parent"
         android:layout_height="113dp"
         android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
 
         >
 
@@ -55,6 +62,8 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_weight="1"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:src="@drawable/checkbook" />
 
         <ImageView
@@ -62,6 +71,8 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_weight="1"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:src="@drawable/callbook" />
 
     </LinearLayout>
@@ -69,12 +80,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="116dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/histroy"
             android:layout_width="match_parent"
             android:layout_height="120dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
             android:src="@drawable/myhistory" />
 
@@ -82,25 +97,12 @@
             android:id="@+id/waitinglist"
             android:layout_width="match_parent"
             android:layout_height="120dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_weight="1"
             android:src="@drawable/checkorder" />
 
     </LinearLayout>
-
-    <SeekBar
-        android:id="@+id/seekBar2"
-        style="@android:style/Widget.Material.Light.SeekBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:max="@android:integer/status_bar_notification_info_maxnum"
-        android:progress="@android:integer/status_bar_notification_info_maxnum"
-        android:scrollbarSize="@android:dimen/thumbnail_width"
-        android:theme="@style/Base.AlertDialog.AppCompat.Light" />
 
 
 </LinearLayout>

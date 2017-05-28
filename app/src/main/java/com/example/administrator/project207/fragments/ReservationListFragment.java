@@ -52,13 +52,14 @@ public class ReservationListFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+        public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
 
     private ListView userListView ;
     private UserListAdapter adapter ;
@@ -69,13 +70,23 @@ public class ReservationListFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle b){
         super.onActivityCreated(b);
-
+                /*
                 new BackgroundTask().execute();
                 userListView = (ListView) getView().findViewById(R.id.UserListView);
                 userList = new ArrayList<>();
                 adapter = new UserListAdapter(getContext().getApplicationContext(), userList);
                 userListView.setAdapter(adapter);
+*/
 
+    }
+    @Override
+    public  void onResume(){
+        super.onResume();
+        new BackgroundTask().execute();
+        userListView = (ListView) getView().findViewById(R.id.UserListView);
+        userList = new ArrayList<>();
+        adapter = new UserListAdapter(getContext().getApplicationContext(), userList);
+        userListView.setAdapter(adapter);
 
     }
 
@@ -149,10 +160,6 @@ public class ReservationListFragment extends Fragment {
             try{
 
 
-
-
-
-                userList.clear();
                 JSONObject jsonObject = new JSONObject(result);
                 JSONArray jsonArray = jsonObject.getJSONArray("response");
                 int count = 0;

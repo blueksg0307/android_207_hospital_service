@@ -180,7 +180,7 @@ public class WaitingListFragment extends Fragment {
 
             try{
 
-                userList.clear();
+
                 JSONObject jsonObject = new JSONObject(result);
                 JSONArray jsonArray = jsonObject.getJSONArray("response");
                 int count = 0;

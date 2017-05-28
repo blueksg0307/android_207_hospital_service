@@ -12,4 +12,6 @@
     <color name="colormediumspringGreen">#09FB98</color>
     <color name="springgreen">#00FF7F</color>
     <color name="LawnGreen">#7CFC00</color>
+    <color name="YELLOW">#FFFF00</color>
+    <color name="GOLD">#FFD700</color>
 </resources>

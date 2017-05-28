@@ -8,6 +8,14 @@
     <!-- TODO: Update blank fragment layout -->
 
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/GOLD"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
     <ListView
         android:id="@+id/UserListView"
         android:layout_width="match_parent"
