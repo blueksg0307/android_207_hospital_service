@@ -31,8 +31,8 @@ public class CheckWaitingActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                ReservationList.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                WaitingList.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                ReservationList.setBackgroundColor(getResources().getColor(R.color.ORRANGE));
+                WaitingList.setBackgroundColor(getResources().getColor(R.color.GOLD));
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.Fragment, new ReservationListFragment());
@@ -46,8 +46,8 @@ public class CheckWaitingActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                WaitingList.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                ReservationList.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                WaitingList.setBackgroundColor(getResources().getColor(R.color.ORRANGE));
+                ReservationList.setBackgroundColor(getResources().getColor(R.color.GOLD));
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.Fragment, new WaitingListFragment());

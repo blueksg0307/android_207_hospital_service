@@ -36,5 +36,7 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:10.2.6'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     //
+    // 카카오 로그인 sdk를 사용하기 위해 필요.
+
 }
 apply plugin: 'com.google.gms.google-services'

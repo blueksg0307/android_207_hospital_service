@@ -283,6 +283,7 @@ public class MainActivity extends AppCompatActivity {
                     if(beaconSuccess){
 
                         finishReservation = true ;
+                        /*
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder.setMessage("진료접수가 성공하였습니다. 예약을 확인하시겠습니까?.")
                                 .setPositiveButton("확인", new DialogInterface.OnClickListener() {
@@ -296,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
                                 })
                                 .setNegativeButton("아니요", null)
                                 .create()
-                                .show();
+                                .show();*/
                     }
 
                 } catch (Exception e) {
