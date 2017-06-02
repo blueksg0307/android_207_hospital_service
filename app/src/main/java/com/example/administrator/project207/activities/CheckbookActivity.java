@@ -5,8 +5,10 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.administrator.project207.HistoryListAdapter;
 import com.example.administrator.project207.R;
 import com.example.administrator.project207.User;
 import com.example.administrator.project207.UserListAdapter;
@@ -21,7 +23,7 @@ public class CheckbookActivity extends AppCompatActivity {
 
 
     private ListView listView ;
-    private UserListAdapter adapter ;
+    private HistoryListAdapter adapter ;
     private List<User> userList;
 
     @Override
@@ -31,7 +33,7 @@ public class CheckbookActivity extends AppCompatActivity {
         Intent intent = getIntent();
         listView = (ListView) findViewById(R.id.UserListView);
         userList = new ArrayList<User>();
-        adapter = new UserListAdapter(CheckbookActivity.this, userList);
+        adapter = new HistoryListAdapter(CheckbookActivity.this, userList);
         listView.setAdapter(adapter);
 
 

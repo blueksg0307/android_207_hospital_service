@@ -4,8 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -31,10 +31,12 @@
             android:name=".activities.SplashActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity android:name=".activities.SetDateActivity" />
-        <activity android:name=".activities.CheckWaitingActivity"></activity>
-        <activity android:name=".activities.Pop"
-            android:theme="@style/AppTheme.pop"></activity>
-
+        <activity android:name=".activities.CheckWaitingActivity" />
+        <activity
+            android:name=".activities.Pop"
+            android:theme="@style/AppTheme.pop" />
+        <activity android:name=".activities.ChattingActivity" />
+        <activity android:name=".activities.ChartAcitivity"></activity>
     </application>
 
 </manifest>

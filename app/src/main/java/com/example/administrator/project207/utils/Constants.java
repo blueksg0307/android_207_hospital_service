@@ -6,7 +6,7 @@ package com.example.administrator.project207.utils;
 
 public class Constants {
     
-    public static final String HOST = "http://chlqkrtk2.iptime.org:3000";
+    public static final String HOST = "http://chlqkrtk2.iptime.org:80";
 
     public interface POST_REQUEST_URLS {
         String LOGIN = HOST + "/login";

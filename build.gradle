@@ -31,6 +31,13 @@ subprojects {
         maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
     }
 }
+
+
 //카카오톡 로그인 연동----------------------------------------------------
-
-
+//MPandroidChart 연동-----------------------------
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+//MPandroidChart 연동-----------------------------

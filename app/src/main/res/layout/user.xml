@@ -49,8 +49,20 @@
             android:layout_weight="1"
             android:text="이름"
             android:textColor="#000000"
-            android:textSize="25dp"
+            android:textSize="15dp"
+            android:layout_marginBottom="2dp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/titleView1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="희망진료시간"
+            android:textSize="15dp"
+            android:textColor="@color/colorGray"
+            android:layout_marginBottom="1dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/book_date"
@@ -58,10 +70,10 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="예약날짜"
-            android:textSize="20dp"
+            android:textSize="14dp"
             android:textColor="@color/colorGray"
 
-            android:textStyle="italic"/>
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
@@ -74,18 +86,15 @@
         <TextView
 
             android:id="@+id/usercount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
             android:background="@color/GOLD"
-            android:gravity="center"
             android:text="1"
             android:textAlignment="center"
             android:textColor="#ffffff"
             android:textSize="25dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="25dp"
+
 
             ></TextView>
     </LinearLayout>

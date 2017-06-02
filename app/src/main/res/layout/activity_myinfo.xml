@@ -48,7 +48,6 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginBottom="20dp"
                     app:srcCompat="@drawable/people" />
 
                 <EditText
@@ -66,6 +65,14 @@
                     android:textAlignment="center"
                     />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/addprofile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="프로필 설정" />
 
             <EditText
                 android:id="@+id/idtext"

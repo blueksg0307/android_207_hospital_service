@@ -1,7 +1,10 @@
 package com.example.administrator.project207.activities;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -20,10 +23,58 @@ import com.example.administrator.project207.utils.ServerRequestQueue;
 
 import org.json.JSONObject;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public class MyinfoActivity extends AppCompatActivity {
 
     private ServerRequestQueue mRequestQueue;
     private AlertDialog dialog ;
+    //이미지 선택시 이미지 코드값
+    final int REQ_CODE_SELECT_IMAGE=100;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+
+        //Toast.makeText(getBaseContext(), "resultCode : "+resultCode,Toast.LENGTH_SHORT).show();
+
+        if(requestCode == REQ_CODE_SELECT_IMAGE)
+        {
+            if(resultCode== Activity.RESULT_OK)
+            {
+                try {
+                    //Uri에서 이미지 이름을 얻어온다.
+                    //String name_Str = getImageNameToUri(data.getData());
+
+                    //이미지 데이터를 비트맵으로 받아온다.
+                    Bitmap image_bitmap 	= MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
+
+                    ImageView image = (ImageView)findViewById(R.id.UserImage);
+
+                    //배치해놓은 ImageView에 set
+                    image.setImageBitmap(image_bitmap);
+
+
+                    //Toast.makeText(getBaseContext(), "name_Str : "+name_Str , Toast.LENGTH_SHORT).show();
+
+
+                } catch (FileNotFoundException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +91,21 @@ public class MyinfoActivity extends AppCompatActivity {
         final EditText Birthtext = (EditText) findViewById(R.id.Birthtext);
         final EditText Phonetext = (EditText) findViewById(R.id.Phonetext);
         final ImageView UserImage = (ImageView) findViewById(R.id.UserImage);
-       // final Button addProfile = (Button) findViewById(R.id.addProfile);
+        final Button addProfile = (Button) findViewById(R.id.addprofile);
+
+        //프로필 설정 버튼을 누르면 갤러리로 가서 사진을 선택하는 부분
+        addProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
+                intent.setData(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, REQ_CODE_SELECT_IMAGE);
+            }
+        });
+
+
         Intent intent = getIntent();
         String userID = intent.getStringExtra("userID");
         String userName = intent.getStringExtra("userName");

@@ -26,6 +26,14 @@ public class CheckWaitingActivity extends AppCompatActivity {
         final String result = intent.getStringExtra("userList");
 
 
+        WaitingList.setBackgroundColor(getResources().getColor(R.color.ORRANGE));
+        ReservationList.setBackgroundColor(getResources().getColor(R.color.GOLD));
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.Fragment, new WaitingListFragment());
+        fragmentTransaction.commit();
+
+
         ReservationList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

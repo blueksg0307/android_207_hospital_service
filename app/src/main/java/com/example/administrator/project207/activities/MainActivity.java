@@ -113,9 +113,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Uri uri = Uri.parse("tel:043-494-5451");
-                Intent intent = new Intent(Intent.ACTION_DIAL,uri);
+                Intent intent = new Intent(MainActivity.this, ChartAcitivity.class);
                 startActivity(intent);
+                //Uri uri = Uri.parse("tel:043-494-5451");
+                //Intent intent = new Intent(Intent.ACTION_DIAL,uri);
+               // startActivity(intent);
 
 
             }

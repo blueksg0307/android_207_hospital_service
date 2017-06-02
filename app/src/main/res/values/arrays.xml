@@ -13,6 +13,17 @@
 
     </string-array>
 
+    <string-array name="month">
+        <item>monday</item>
+        <item>thusday</item>
+        <item>wenseday</item>
+        <item>thursday</item>
+        <item>friday</item>
+        <item>saturday</item>
+        <item>sunday</item>
+
+    </string-array>
+
     <string-array name="disease">
 
         <item>그냥아파서</item>

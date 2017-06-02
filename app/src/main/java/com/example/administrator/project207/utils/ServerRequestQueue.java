@@ -116,9 +116,9 @@ public class ServerRequestQueue {
                         Map<String, String> parameters = new HashMap<>();
                         parameters.put("userID", params[0]);
                         parameters.put("userPurpose",params[1]);
-                        parameters.put("bookDay", params[2]);
+                        parameters.put("bookYear", params[2]);
                         parameters.put("bookMonth", params[3]);
-                        parameters.put("bookYear", params[4]);
+                        parameters.put("bookDay", params[4]);
                         parameters.put("bookTime", params[5]);
 
                         return parameters;

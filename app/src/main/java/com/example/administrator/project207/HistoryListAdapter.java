@@ -1,18 +1,12 @@
 package com.example.administrator.project207;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -20,12 +14,12 @@ import java.util.List;
  * Created by Administrator on 2017-04-05.
  */
 
-public class UserListAdapter extends BaseAdapter {
+public class HistoryListAdapter extends BaseAdapter {
 
     private Context context;
     private List<User> userList;
 
-    public UserListAdapter(Context context, List<User> userList){
+    public HistoryListAdapter(Context context, List<User> userList){
 
         this.context = context;
         this.userList = userList;
@@ -55,11 +49,15 @@ public class UserListAdapter extends BaseAdapter {
         TextView userCount =(TextView) v.findViewById(R.id.usercount);
         TextView username =(TextView) v.findViewById(R.id.userName);
         TextView wantDate =(TextView) v.findViewById(R.id.book_date);
+        TextView title = (TextView) v.findViewById(R.id.titleView1);
+
+        //title.setVisibility(View.GONE);
 
 
         userCount.setText(userList.get(i).getUserCount()+"");
-        username.setText("이름 : " + userList.get(i).getUserName());
-        wantDate.setText(userList.get(i).getBookDate()+"");
+        username.setText("방문목적 : " + userList.get(i).getBookDate());
+        wantDate.setText(userList.get(i).getUserName());
+
 
         if(userCount == null){
 
