@@ -71,7 +71,6 @@ public class SetDateActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 reserved_time = spinner.getSelectedItem().toString();
-                Toast.makeText(SetDateActivity.this, reserved_time, Toast.LENGTH_SHORT).show();
                 Intent Intent = new Intent(SetDateActivity.this, ReserveActivity.class);
                 Intent.putExtra("reserved_year",reserved_year);
                 Intent.putExtra("reserved_time", reserved_time);

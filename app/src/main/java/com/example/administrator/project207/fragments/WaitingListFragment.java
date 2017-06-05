@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.administrator.project207.R;
 import com.example.administrator.project207.User;
@@ -194,7 +195,7 @@ public class WaitingListFragment extends Fragment {
                     userCount = count + 1;
                     userName = object.getString("name");
                     bookDate = object.getString("wanttime");
-                    User user = new User(userCount, userName, bookDate.substring(0,16));
+                    User user = new User(userCount, userName, bookDate);
                     userList.add(user);
                     count++;
 
@@ -202,12 +203,7 @@ public class WaitingListFragment extends Fragment {
                 }
                 if(count == 0 ){
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(WaitingListFragment.this.getActivity());
-                    AlertDialog dialog;
-                    dialog = builder.setMessage("진료 대기중인 환자가 없습니다")
-                            .setPositiveButton("확인", null)
-                            .create();
-                    dialog.show();
+                    Toast.makeText(getContext(),"대기자가 없네요! 지금이 병원올 최고의 시기!",Toast.LENGTH_LONG);
                 }
                 adapter.notifyDataSetChanged();
             }

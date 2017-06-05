@@ -62,6 +62,7 @@
                     android:drawableStart="@drawable/ic_person_add_black_24dp"
                     android:hint="아이디"
                     android:padding="10dp"
+                    android:maxLength="15"
                     android:textColor="#ffffff"
                     android:textColorHint="#ffffff"
                     android:textSize="18dp"
@@ -97,6 +98,7 @@
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"
                 android:textSize="18dp"
+                android:maxLength="15"
                 android:textStyle="bold"></EditText>
 
             <EditText
@@ -113,6 +115,7 @@
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"
                 android:textSize="18dp"
+                android:maxLength="7"
                 android:textStyle="bold"></EditText>
 
             <EditText
@@ -144,6 +147,24 @@
                 android:drawableStart="@drawable/ic_lock_black_24dp"
                 android:hint="이메일"
                 android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:textSize="18dp"
+                android:maxLength="30"
+                android:textStyle="bold"></EditText>
+
+            <EditText
+                android:id="@+id/phoneText"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/GOLD"
+                android:hint="핸드폰번호를 -없이 입력해주세요"
+                android:inputType="number"
+                android:maxLines="1"
+                android:maxLength="11"
                 android:padding="10dp"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"

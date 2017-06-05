@@ -147,7 +147,7 @@ public class ServerRequestQueue {
                     }
                 };
                 break;
-            case Constants.POST_REQUEST_URLS.TEST01:
+            case Constants.POST_REQUEST_URLS.Register:
                 stringRequest = new StringRequest(Request.Method.POST, url, successListener, errorListener) {
                     @Override
                     protected Map<String, String> getParams() throws AuthFailureError {
@@ -157,6 +157,33 @@ public class ServerRequestQueue {
                         parameters.put("username", params[2]);
                         parameters.put("birth", params[3]);
                         parameters.put("email", params[4]);
+                        parameters.put("phone", params[5]);
+
+                        return parameters;
+                    }
+                };
+                break;
+
+            case Constants.POST_REQUEST_URLS.Fcm_CheckWaitingcount:
+                stringRequest = new StringRequest(Request.Method.POST, url, successListener, errorListener) {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> parameters = new HashMap<>();
+                        parameters.put("userid", params[0]);
+
+
+                        return parameters;
+                    }
+                };
+                break;
+
+            case Constants.POST_REQUEST_URLS.Fcm_Success:
+                stringRequest = new StringRequest(Request.Method.POST, url, successListener, errorListener) {
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> parameters = new HashMap<>();
+                        parameters.put("token", params[0]);
+
 
                         return parameters;
                     }

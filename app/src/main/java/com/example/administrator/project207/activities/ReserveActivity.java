@@ -89,64 +89,53 @@ public class ReserveActivity extends AppCompatActivity {
         });
 
 
-        reservationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                userID = intent.getStringExtra("userID");
-
-                if(userName.equals("")){
-                 Toast.makeText(ReserveActivity.this, "진료받으실분의 이름을 입력해주세요", Toast.LENGTH_SHORT).show();}
-
-                if(userBirth.equals("")){
-                    Toast.makeText(ReserveActivity.this, "진료받으실분의 생일을 입력해주세요", Toast.LENGTH_SHORT).show();}
-
-                if(reserved_time.equals("")){
-                    Toast.makeText(ReserveActivity.this, "진료받으실 시간을 선택해주세요", Toast.LENGTH_SHORT).show();}
-
-                if(reserved_year.equals("") | reserved_date.equals("") | reserved_month.equals("")){
-                    Toast.makeText(ReserveActivity.this, "진료받으실 날짜을 선택해주세요", Toast.LENGTH_SHORT).show();}
-
-                userPurpose = diesaeSpinner.getSelectedItem().toString();
-
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-
-                            JSONObject jsonresponse = new JSONObject(response);
-                            success = jsonresponse.getBoolean("success");
 
 
-                            if (success) {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(ReserveActivity.this);
-                                dialog = builder.setMessage("예약완료!")
-                                        .setPositiveButton("네", null)
-                                        .create();
-                                dialog.show();
-                                finish();
+            reservationButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    userID = intent.getStringExtra("userID");
+                    userPurpose = diesaeSpinner.getSelectedItem().toString();
 
-                            }
-                            else {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(ReserveActivity.this);
-                                dialog = builder.setMessage("예약실패")
-                                        .setNegativeButton("yes", null)
-                                        .create();
-                                dialog.show();
+                    Response.Listener<String> responseListener = new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            try {
+
+                                JSONObject jsonresponse = new JSONObject(response);
+                                success = jsonresponse.getBoolean("success");
+
+
+                                if (success) {
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(ReserveActivity.this);
+                                    dialog = builder.setMessage("예약완료!")
+                                            .setPositiveButton("네", null)
+                                            .create();
+                                    dialog.show();
+                                    finish();
+
+                                } else {
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(ReserveActivity.this);
+                                    dialog = builder.setMessage("예약실패")
+                                            .setNegativeButton("yes", null)
+                                            .create();
+                                    dialog.show();
+                                }
+                            } catch (Exception e) {
+
+                                e.printStackTrace();
                             }
                         }
-                        catch (Exception e){
+                    };
 
-                            e.printStackTrace();
-                        }
-                    }
-                };
+                    mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.ADD_RESERVATION, responseListener, null, userID, userPurpose, reserved_year, reserved_month, reserved_date, reserved_time);
 
-                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.ADD_RESERVATION, responseListener, null, userID, userPurpose, reserved_year, reserved_month, reserved_date, reserved_time);
+                }
 
-            }
-        });
+            });
+        }
 
-    }
+
     @Override
     protected void onStart(){
         super.onStart();

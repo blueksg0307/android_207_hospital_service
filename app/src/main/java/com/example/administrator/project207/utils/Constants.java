@@ -23,7 +23,11 @@ public class Constants {
         String GET_WAITING = HOST + "/get_waiting";
 
         // Register new account
-        String TEST01 = HOST + "/test";
+        String Register = HOST + "/register";
+
+        //FCM
+        String Fcm_Success = HOST + "/alert/success";
+        String Fcm_CheckWaitingcount = HOST + "/check_waiting_count";
     }
 
     // Change tags to suit your appetite

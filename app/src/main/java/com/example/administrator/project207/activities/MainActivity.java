@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.SharedPreferencesCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private String userBirth;
     private String userNumber;
     private String userToken;
-    private boolean finishReservation ;
+    private boolean finishReservation = false;
     private boolean beaconSuccess ;
 
 
@@ -74,9 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         //If each permission have not been checked, not going to be working.
         //However checked, going to store Permission success into CheckPermission class
-        if(ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
-            CheckPermission.readStoragePermission = true ;
-        }
+
 
 
         //FireBase Testing
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         userToken = FirebaseInstanceId.getInstance().getToken().toString();
         //
 
-
+        Log.d("token",userToken);
         myinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -234,11 +233,12 @@ public class MainActivity extends AppCompatActivity {
                     beacon_uuid = nearestBeacon.getProximityUUID().toString();
                     Intent Information = getIntent();
                     userID = Information.getStringExtra("userID");
-                    if(!finishReservation) {
 
-                        new BackgroundTask().execute();
 
-                    }
+                        if(!finishReservation) {
+                            new BackgroundTask().execute();
+                        }
+
 
                 }
             }
@@ -272,6 +272,18 @@ public class MainActivity extends AppCompatActivity {
 
     class BackgroundTask extends AsyncTask<Void, Void, String> {
 
+        Response.Listener<String> responseListener2 = new Response.Listener<String>(){
+
+            @Override
+            public void onResponse(String response){
+                try {
+
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        };
 
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -281,10 +293,15 @@ public class MainActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     beaconSuccess = jsonObject.getBoolean("success");
 
+                    //SharedPreferences
+
                     //After Recognizing ReservationSuccess with beaconConnection, Message is going to be happend.
                     if(beaconSuccess){
 
                         finishReservation = true ;
+
+                        mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.Fcm_CheckWaitingcount, responseListener2, null, userID);
+
                         /*
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder.setMessage("진료접수가 성공하였습니다. 예약을 확인하시겠습니까?.")

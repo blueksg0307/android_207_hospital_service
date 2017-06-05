@@ -9,9 +9,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/hospital"
+        android:icon="@mipmap/main"
         android:label="동네병원"
-        android:roundIcon="@mipmap/hospital"
+        android:roundIcon="@mipmap/main"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.LoginActivity">
@@ -37,6 +37,13 @@
             android:theme="@style/AppTheme.pop" />
         <activity android:name=".activities.ChattingActivity" />
         <activity android:name=".activities.ChartAcitivity"></activity>
+
+
     </application>
+
+
+
+
+
 
 </manifest>

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.administrator.project207.R;
 import com.example.administrator.project207.User;
@@ -180,12 +181,7 @@ public class ReservationListFragment extends Fragment {
                 }
                 if(count == 0 ){
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(ReservationListFragment.this.getActivity());
-                    AlertDialog dialog;
-                    dialog = builder.setMessage("예약 대기중인 환자가 없습니다")
-                            .setPositiveButton("확인", null)
-                            .create();
-                    dialog.show();
+                    Toast.makeText(getContext(),"예약이 없습니다. 빨리 예약하시면 당신이 1등!",Toast.LENGTH_LONG);
                 }
                 adapter.notifyDataSetChanged();
             }

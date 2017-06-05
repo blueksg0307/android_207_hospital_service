@@ -24,6 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
     private String userEmail;
     private String userName;
     private String userBirth;
+    private String userPhone;
     private AlertDialog dialog;
     private boolean validate = false;
     private boolean success ;
@@ -41,6 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText nameText = (EditText) findViewById(R.id.nameText);
         final EditText birthText = (EditText) findViewById(R.id.birthText);
         final EditText emailText = (EditText) findViewById(R.id.emailText);
+        final EditText phoneText = (EditText) findViewById(R.id.phoneText);
 
        final Button validateButton = (Button) findViewById(R.id.validateButton);
 
@@ -115,7 +117,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String userName = nameText.getText().toString();
                 String userBirth = birthText.getText().toString();
                 String userEmail = emailText.getText().toString();
-
+                String userPhone = phoneText.getText().toString();
 
                 if(userBirth.length() > 6)
                 {
@@ -135,7 +137,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 }
 
-                if (userID.equals("") || userPassword.equals("") || userName.equals("") || userBirth.equals("") || userEmail.equals("")){
+                if (userID.equals("") || userPassword.equals("") || userName.equals("") || userBirth.equals("") || userEmail.equals("") || userPhone.equals("")){
                     AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                     dialog = builder.setMessage("모든 정보를 기입해주세요")
                             .create();
@@ -179,7 +181,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 };
 
-                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.TEST01, responseListener, null, userID, userPassword, userName, userBirth, userEmail);
+                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.Register, responseListener, null, userID, userPassword, userName, userBirth, userEmail,userPhone);
             }
         });
     }

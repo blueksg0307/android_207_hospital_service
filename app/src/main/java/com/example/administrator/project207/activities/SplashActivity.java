@@ -19,6 +19,7 @@ public class SplashActivity extends Activity {
     private int beacon_major;
     private int beacon_minor;
     private Region region;
+    public boolean finishReservation = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class SplashActivity extends Activity {
         Toast.makeText(getApplicationContext(),"블루투스 키지 않으면 진료접수가 진행되지 않습니다",Toast.LENGTH_SHORT).show();
         Toast.makeText(getApplicationContext(),"블루투스 메시지에 동의해주세요!!",Toast.LENGTH_SHORT).show();
         beaconManager = new BeaconManager(this);
-
+        boolean finishReservation = false;
         region = new Region("ranged region",
                 UUID.fromString("b9407f30-f5f8-466e-aff9-25556b57fe70"),null,null);
 
@@ -40,7 +41,7 @@ public class SplashActivity extends Activity {
 
                 finish();
             }
-        }, 5000); // 3초 후 이미지를 닫습니다
+        }, 3000); // 3초 후 이미지를 닫습니다
 
     }
 
