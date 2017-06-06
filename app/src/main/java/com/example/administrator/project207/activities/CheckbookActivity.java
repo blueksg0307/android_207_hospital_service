@@ -43,12 +43,9 @@ public class CheckbookActivity extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject(intent.getStringExtra("userList"));
             JSONArray jsonArray = jsonObject.getJSONArray("response");
 
-
             String bookDate;
             String Purpose;
             int count = 0 ;
-
-
 
             while (count < jsonArray.length())
             {
@@ -59,7 +56,6 @@ public class CheckbookActivity extends AppCompatActivity {
                 User user = new User(usercount, bookDate, Purpose);
                 userList.add(user);
                 count++;
-
 
             }
             if(count ==0){

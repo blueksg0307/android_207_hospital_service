@@ -21,6 +21,7 @@ import com.estimote.sdk.BeaconManager;
 import com.estimote.sdk.Region;
 import com.estimote.sdk.SystemRequirementsChecker;
 import com.example.administrator.project207.R;
+import com.example.administrator.project207.User;
 import com.example.administrator.project207.utils.CheckPermission;
 import com.example.administrator.project207.utils.Constants;
 import com.example.administrator.project207.Service.MyFirebaseInstanceIDService;
@@ -28,15 +29,20 @@ import com.example.administrator.project207.utils.ServerRequestQueue;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
     private ServerRequestQueue mRequestQueue;
-
     private BeaconManager beaconManager ;
     private Region region;
     private String beacon_uuid;
@@ -49,16 +55,13 @@ public class MainActivity extends AppCompatActivity {
     private String userBirth;
     private String userNumber;
     private String userToken;
-    private boolean finishReservation = false;
+    boolean finishReservation = false;
     private boolean beaconSuccess ;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        mRequestQueue = ServerRequestQueue.getInstance(getApplicationContext());
 
         final ImageView booking  = (ImageView) findViewById(R.id.booking);
         final ImageView myinfo   = (ImageView) findViewById(R.id.myinfo);
@@ -67,23 +70,9 @@ public class MainActivity extends AppCompatActivity {
         final ImageView waitingList   = (ImageView) findViewById(R.id.waitinglist);
         final ImageView history = (ImageView) findViewById(R.id.histroy);
 
-        Intent Information = getIntent();
-        userID = Information.getStringExtra("userID");
-        userName = Information.getStringExtra("userName");
-        userBirth = Information.getStringExtra("userBirth");
-        userNumber = Information.getStringExtra("userNumber");
-
         //If each permission have not been checked, not going to be working.
         //However checked, going to store Permission success into CheckPermission class
 
-
-
-        //FireBase Testing
-        FirebaseMessaging.getInstance().subscribeToTopic("news");
-        userToken = FirebaseInstanceId.getInstance().getToken().toString();
-        //
-
-        Log.d("token",userToken);
         myinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -164,10 +153,9 @@ public class MainActivity extends AppCompatActivity {
         waitingList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(MainActivity.this, CheckWaitingActivity.class);
-                MainActivity.this.startActivity(intent);
-
-
+                startActivity(intent);
             }
         });
 
@@ -190,7 +178,6 @@ public class MainActivity extends AppCompatActivity {
                                 Intent.putExtra("userList", jsonObject.toString());
                                 MainActivity.this.startActivity(Intent);
 
-
                             }
                             else{
 
@@ -208,46 +195,66 @@ public class MainActivity extends AppCompatActivity {
                 mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.CHECK_RESERVATION, responseListener, null, userID);
             }
         });
-
     }
 
     @Override
     protected void onResume(){
         super.onResume();
         SystemRequirementsChecker.checkWithDefaultDialogs(this);
+        mRequestQueue = ServerRequestQueue.getInstance(getApplicationContext());
+        Intent Information = getIntent();
+        userID = Information.getStringExtra("userID");
+        userName = Information.getStringExtra("userName");
+        userBirth = Information.getStringExtra("userBirth");
+        userNumber = Information.getStringExtra("userNumber");
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+        userToken = FirebaseInstanceId.getInstance().getToken().toString();
+        //FireBase Testing
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+        userToken = FirebaseInstanceId.getInstance().getToken().toString();
+        Log.d("token",userToken);
         beaconManager = new BeaconManager(this);
+        if(beacon_uuid == null) {
+
+
         beaconManager.connect(new BeaconManager.ServiceReadyCallback() {
             @Override
             public void onServiceReady() {
                 beaconManager.startRanging(region);
             }
         });
-        beaconManager.setRangingListener(new BeaconManager.RangingListener() {
-            @Override
-            public void onBeaconsDiscovered(Region region, List<Beacon> list) {
-                if(!list.isEmpty()){
 
-                    Beacon nearestBeacon = list.get(0);
-                    beacon_Major = nearestBeacon.getMajor();
-                    beacon_Minor = nearestBeacon.getMinor();
-                    beacon_uuid = nearestBeacon.getProximityUUID().toString();
-                    Intent Information = getIntent();
-                    userID = Information.getStringExtra("userID");
+            beaconManager.setRangingListener(new BeaconManager.RangingListener() {
+                @Override
+                public void onBeaconsDiscovered(Region region, List<Beacon> list) {
+                    if (!list.isEmpty()) {
+
+                        Beacon nearestBeacon = list.get(0);
+                        beacon_Major = nearestBeacon.getMajor();
+                        beacon_Minor = nearestBeacon.getMinor();
+                        beacon_uuid = nearestBeacon.getProximityUUID().toString();
+                        Intent Information = getIntent();
+                        userID = Information.getStringExtra("userID");
 
 
-                        if(!finishReservation) {
-                            new BackgroundTask().execute();
+                        if (!finishReservation) {
+
+                            mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.BEACON_CONNECT, responseListener, null, beacon_uuid, userID, userToken);
+
+                        } else {
+
                         }
 
-
+                    }
                 }
-            }
-        });
-
+            });
+        }
+        else{
+            beaconManager.stopRanging(region);
+        }
         region = new Region("ranged region",
                 UUID.fromString("43CBDA6E-28FA-4F5B-AF12-416CAF3E3737"),
                 null,null);
-
 
     }
 
@@ -270,79 +277,43 @@ public class MainActivity extends AppCompatActivity {
         lastTimeBackPressed = System.currentTimeMillis();
     }
 
-    class BackgroundTask extends AsyncTask<Void, Void, String> {
-
-        Response.Listener<String> responseListener2 = new Response.Listener<String>(){
-
-            @Override
-            public void onResponse(String response){
-                try {
-
-                }
-                catch (Exception e){
-                    e.printStackTrace();
-                }
-            }
-        };
-
-
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    beaconSuccess = jsonObject.getBoolean("success");
-
-                    //SharedPreferences
-
-                    //After Recognizing ReservationSuccess with beaconConnection, Message is going to be happend.
-                    if(beaconSuccess){
-
-                        finishReservation = true ;
-
-                        mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.Fcm_CheckWaitingcount, responseListener2, null, userID);
-
-                        /*
-                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                        builder.setMessage("진료접수가 성공하였습니다. 예약을 확인하시겠습니까?.")
-                                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-
-                                        Intent Intent = new Intent(MainActivity.this, CheckbookActivity.class);
-                                        startActivity(Intent);
-
-                                    }
-                                })
-                                .setNegativeButton("아니요", null)
-                                .create()
-                                .show();*/
-                    }
-
-                } catch (Exception e) {
-
-                    e.printStackTrace();}
-            }
-        };
+    Response.Listener<String> responseListener2 = new Response.Listener<String>(){
 
         @Override
-        protected String doInBackground(Void... params) {
-
+        public void onResponse(String response){
             try {
 
-                mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.BEACON_CONNECT, responseListener, null, beacon_uuid, userID, userToken);
-                Thread.sleep(300000);
-
-
-
-            }catch (Exception e){
-
-                e.printStackTrace();
-
             }
-
-            return null;
+            catch (Exception e){
+                e.printStackTrace();
+            }
         }
+    };
 
+
+    Response.Listener<String> responseListener = new Response.Listener<String>() {
+        @Override
+        public void onResponse(String response) {
+            try {
+
+
+                JSONObject jsonObject = new JSONObject(response);
+                beaconSuccess = jsonObject.getBoolean("success");
+
+                //SharedPreferences
+
+                //After Recognizing ReservationSuccess with beaconConnection, Message is going to be happend.
+                if(beaconSuccess){
+
+                    finishReservation = true ;
+
+                    mRequestQueue.addRequest(Constants.POST_REQUEST_URLS.Fcm_CheckWaitingcount, responseListener2, null, userID);
+
+                }
+
+            } catch (Exception e) {
+
+                e.printStackTrace();}
+        }
+    };
     }
-}

@@ -71,13 +71,6 @@ public class ReservationListFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle b){
         super.onActivityCreated(b);
-                /*
-                new BackgroundTask().execute();
-                userListView = (ListView) getView().findViewById(R.id.UserListView);
-                userList = new ArrayList<>();
-                adapter = new UserListAdapter(getContext().getApplicationContext(), userList);
-                userListView.setAdapter(adapter);
-*/
 
     }
     @Override
@@ -88,6 +81,7 @@ public class ReservationListFragment extends Fragment {
         userList = new ArrayList<>();
         adapter = new UserListAdapter(getContext().getApplicationContext(), userList);
         userListView.setAdapter(adapter);
+
 
     }
 
@@ -192,4 +186,5 @@ public class ReservationListFragment extends Fragment {
 
         }
     }
+
 }

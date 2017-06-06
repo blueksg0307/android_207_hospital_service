@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.administrator.project207.activities.CheckWaitingActivity">
+    tools:context="com.example.administrator.project207.activities.CheckReservationActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar3"
@@ -23,7 +23,7 @@
 
 
         <Button
-            android:id="@+id/waitinglistFragment"
+            android:id="@+id/waitinglist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -37,7 +37,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/reservationlistFragment"
+            android:id="@+id/reservationlist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -56,13 +56,17 @@
         android:layout_height="match_parent">
 
 
-        <RelativeLayout
+        <ListView
+            android:id="@+id/UserListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/Fragment">
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:dividerHeight="2dp"
+            android:divider="@color/GOLD"
+            />
 
-
-        </RelativeLayout>
 
     </FrameLayout>
 

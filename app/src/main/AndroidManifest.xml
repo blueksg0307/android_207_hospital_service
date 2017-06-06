@@ -35,15 +35,7 @@
         <activity
             android:name=".activities.Pop"
             android:theme="@style/AppTheme.pop" />
-        <activity android:name=".activities.ChattingActivity" />
-        <activity android:name=".activities.ChartAcitivity"></activity>
-
-
+        <activity android:name=".activities.ChartAcitivity" />
     </application>
-
-
-
-
-
 
 </manifest>

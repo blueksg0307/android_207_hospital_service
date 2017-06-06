@@ -22,9 +22,6 @@ public class CheckWaitingActivity extends AppCompatActivity {
 
         final Button ReservationList = (Button) findViewById(R.id.reservationlistFragment);
         final Button WaitingList = (Button) findViewById(R.id.waitinglistFragment);
-        Intent intent = getIntent();
-        final String result = intent.getStringExtra("userList");
-
 
         WaitingList.setBackgroundColor(getResources().getColor(R.color.ORRANGE));
         ReservationList.setBackgroundColor(getResources().getColor(R.color.GOLD));
@@ -48,7 +45,6 @@ public class CheckWaitingActivity extends AppCompatActivity {
             }
         });
 
-
         WaitingList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,8 +58,5 @@ public class CheckWaitingActivity extends AppCompatActivity {
                 fragmentTransaction.commit();
             }
         });
-
     }
-
-
 }

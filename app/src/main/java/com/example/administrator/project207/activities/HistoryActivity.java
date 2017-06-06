@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.administrator.project207.HistoryListAdapter;
 import com.example.administrator.project207.R;
 import com.example.administrator.project207.User;
 import com.example.administrator.project207.UserListAdapter;
@@ -21,7 +22,7 @@ public class HistoryActivity extends AppCompatActivity {
 
 
     private ListView listView;
-    private UserListAdapter adapter;
+    private HistoryListAdapter adapter;
     private List<User> userList;
 
 
@@ -32,19 +33,17 @@ public class HistoryActivity extends AppCompatActivity {
         Intent intent = getIntent();
         listView = (ListView) findViewById(R.id.UserListView);
         userList = new ArrayList<User>();
-        adapter = new UserListAdapter(HistoryActivity.this, userList);
+        adapter = new HistoryListAdapter(HistoryActivity.this, userList);
         listView.setAdapter(adapter);
 
 
         try{
+
             JSONObject jsonObject = new JSONObject(intent.getStringExtra("userList"));
             JSONArray jsonArray = jsonObject.getJSONArray("response");
-
             String bookDate;
             String Purpose;
             int count = 0 ;
-
-
 
             while (count < jsonArray.length())
             {

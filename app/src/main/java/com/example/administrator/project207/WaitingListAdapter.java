@@ -12,12 +12,12 @@ import java.util.List;
  * Created by Administrator on 2017-04-05.
  */
 
-public class HistoryListAdapter extends BaseAdapter {
+public class WaitingListAdapter extends BaseAdapter {
 
     private Context context;
     private List<User> userList;
 
-    public HistoryListAdapter(Context context, List<User> userList){
+    public WaitingListAdapter(Context context, List<User> userList){
 
         this.context = context;
         this.userList = userList;
@@ -42,7 +42,7 @@ public class HistoryListAdapter extends BaseAdapter {
     @Override
     public View getView(final int i, View view, ViewGroup viewGroup) {
 
-        View v = View.inflate(context, R.layout.historyuser, null);
+        View v = View.inflate(context, R.layout.waitinguser, null);
 
         TextView userCount =(TextView) v.findViewById(R.id.usercount);
         TextView username =(TextView) v.findViewById(R.id.userName);
@@ -53,8 +53,8 @@ public class HistoryListAdapter extends BaseAdapter {
 
 
         userCount.setText(userList.get(i).getUserCount()+"");
-        username.setText("방문목적 : " + userList.get(i).getBookDate());
-        wantDate.setText(userList.get(i).getUserName().substring(0,10) +" 시간: "+  userList.get(i).getUserName().substring(12,20));
+        username.setText("이름 : " + userList.get(i).getUserName());
+        wantDate.setText("오늘 : " + userList.get(i).getBookDate());
 
 
         if(userCount == null){

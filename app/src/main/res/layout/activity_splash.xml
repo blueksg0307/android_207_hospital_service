@@ -24,7 +24,7 @@
         android:text="동네병원"
         android:textAlignment="center"
         android:textSize="25dp"
-        android:textColor="@color/BROWN"
+        android:textColor="@color/DarkBROWN"
         android:background="@color/GOLD"
         android:textStyle="bold"
         android:layout_alignTop="@+id/imageView3"

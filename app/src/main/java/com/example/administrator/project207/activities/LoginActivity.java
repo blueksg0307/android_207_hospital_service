@@ -20,17 +20,20 @@ import org.json.JSONObject;
 public class LoginActivity extends AppCompatActivity {
 
     private ServerRequestQueue mRequestQueue;
-    private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        startActivity(new Intent(this, SplashActivity.class));
 
         mRequestQueue = ServerRequestQueue.getInstance(getApplicationContext());
+        final TextView signupButton = (TextView) findViewById(R.id.signupButton);
+        final EditText idText = (EditText) findViewById(R.id.idText);
+        final EditText passwordText = (EditText) findViewById(R.id.passwordText);
+        final Button loginButton = (Button) findViewById(R.id.loginButton);
+        final TextView AppInfo = (TextView) findViewById(R.id.AppInfo);
 
-        startActivity(new Intent(this,SplashActivity.class));
-        TextView signupButton = (TextView) findViewById(R.id.signupButton);
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,11 +43,6 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
-        final EditText idText = (EditText) findViewById(R.id.idText);
-        final EditText passwordText = (EditText) findViewById(R.id.passwordText);
-        final Button loginButton = (Button) findViewById(R.id.loginButton);
-        final TextView AppInfo = (TextView) findViewById(R.id.AppInfo);
 
         AppInfo.setOnClickListener(new View.OnClickListener(){
 
@@ -92,10 +90,10 @@ public class LoginActivity extends AppCompatActivity {
                             else {
 
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                                dialog = builder.setMessage("로그인에 실패하셨습니다. 아이디 , 비밀번호를 확인해주세요")
+                                         builder.setMessage("로그인에 실패하셨습니다. 아이디 , 비밀번호를 확인해주세요")
                                         .setNegativeButton("확인", null)
-                                        .create();
-                                dialog.show();}
+                                        .create()
+                                        .show();}
                         } catch (Exception e) {
 
                             e.printStackTrace();}
@@ -109,11 +107,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStop(){
         super.onStop();
-        if(dialog != null)
-        {
-            dialog.dismiss();
-            dialog = null ;
-        }
+
     }
 
     private long lastTimeBackPressed;

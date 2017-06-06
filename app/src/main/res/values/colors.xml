@@ -16,4 +16,6 @@
     <color name="GOLD">#FFD700</color>
     <color name="ORRANGE">#FFA500</color>
     <color name="BROWN">#8B4513</color>
+    <color name="DarkBROWN">#3E2723</color>
+
 </resources>
