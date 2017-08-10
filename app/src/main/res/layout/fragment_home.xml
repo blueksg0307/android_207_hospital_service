@@ -1,0 +1,98 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.first.administrator.project207.fragments.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="90dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="현재 대기 인원"
+                android:textAlignment="center"
+                android:textSize="27dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="기다리는 시간"
+                android:textAlignment="center"
+                android:textSize="27dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="3명"
+                android:textAlignment="center"
+                android:textSize="70dp" />
+
+            <TextView
+                android:id="@+id/waitingtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.70"
+                android:text="15분"
+                android:textAlignment="center"
+                android:textSize="55dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/rightnow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="20dp"
+                android:padding="18dp"
+                android:text="진료접수 바로하기"
+                android:textSize="40dp" />
+
+            <TextView
+                android:id="@+id/adsd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:inputType="textPersonName"
+                android:text="진료접수 바로하기는 병원 내에서만 가능합니다"
+                android:textAlignment="center"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

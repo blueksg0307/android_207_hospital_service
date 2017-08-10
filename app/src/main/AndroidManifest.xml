@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.administrator.project207">
+    package="com.first.administrator.project207">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/main"
+        android:allowBackup="false"
+        android:icon="@mipmap/animal2"
         android:label="동네병원"
-        android:roundIcon="@mipmap/main"
+        android:roundIcon="@mipmap/animal2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,21 +20,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.ReserveActivity" />
+        <activity android:name=".activities.RegisterActivity" />
         <activity android:name=".activities.MyinfoActivity" />
-        <activity android:name=".activities.CheckbookActivity" />
-        <activity android:name=".activities.HistoryActivity" />
         <activity
             android:name=".activities.SplashActivity"
             android:theme="@android:style/Theme.NoTitleBar" />
-        <activity android:name=".activities.SetDateActivity" />
-        <activity android:name=".activities.CheckWaitingActivity" />
-        <activity
-            android:name=".activities.Pop"
-            android:theme="@style/AppTheme.pop" />
-        <activity android:name=".activities.ChartAcitivity" />
+        <activity android:name=".activities.ReservationActivity" />
+
+        <service
+            android:name=".Service.BeaconConnect"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver android:name=".BroadCastReceiver.MyBroadCastReceiver">
+            <intent-filter>
+                <action android:name="GetBeaconUUID" />
+            </intent-filter>
+        </receiver>
+
+      
     </application>
 
 </manifest>

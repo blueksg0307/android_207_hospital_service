@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.first.administrator.project207.activities.ReservationActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="예약 접수"
+            android:textSize="22dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title" />
+
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/ORRANGE"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/explaination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:text="작은 글씨는 기본 정보로 선택하지 않으면 아래정보로 예약됩니다! "
+            android:textColor="@color/ORRANGE"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/selectname"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="이름선택"
+            android:textColor="@color/black"
+            android:textSize="37dp" />
+
+
+
+
+
+        <TextView
+            android:id="@+id/defaultname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:text="김선광"
+            android:textColor="@color/ORRANGE"
+            android:textSize="13dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/Gray" />
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/selectbirth"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="생년월일"
+            android:textColor="@color/black"
+            android:textSize="37dp" />
+
+        <TextView
+            android:id="@+id/defaultbirth"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:text="1992년 2월 4일"
+            android:textColor="@color/ORRANGE"
+            android:textSize="13dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/Gray" />
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/selectdate"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:text="진료날짜"
+            android:textColor="@color/black"
+            android:textSize="37dp" />
+
+        <TextView
+            android:id="@+id/defaultdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="오늘"
+            android:textColor="@color/ORRANGE"
+            android:textSize="13dp" />
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/Gray" />
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/selecttime"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_weight="1"
+            android:text="진료시간"
+            android:textColor="@color/black"
+            android:textSize="37dp" />
+
+        <TextView
+            android:id="@+id/defaulttime"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:text="12:30"
+            android:textColor="@color/ORRANGE"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/Gray" />
+
+    <LinearLayout
+
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/specialtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:hint="메모"
+            android:drawablePadding="10dp"
+            android:textColorHint="@color/Gray"
+            android:background="@null"
+            android:textSize="37dp" />
+
+        <TextView
+            android:id="@+id/textView50"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:text="전달하고 싶은 메시지가 있으신가요?"
+            android:textColor="@color/ORRANGE"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/Gray" />
+
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/ORRANGE" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/GOLD"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/backbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/GOLD"
+            android:text="취소"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/Gray" />
+
+        <Button
+            android:id="@+id/requestbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/GOLD"
+            android:layout_weight="1"
+            android:text="확인"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -6,30 +6,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/GOLD"
-    tools:context="com.example.administrator.project207.activities.SplashActivity">
+    tools:context="com.first.administrator.project207.activities.SplashActivity">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="125dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_gravity="center"
-        android:src="@drawable/ic_local_hospital_black_24dp"
+        android:src="@drawable/animal2"
+        android:layout_marginBottom="30dp"
         android:id="@+id/imageView3"></ImageView>
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:text="동네병원"
         android:textAlignment="center"
-        android:textSize="25dp"
+        android:textSize="30dp"
         android:textColor="@color/DarkBROWN"
         android:background="@color/GOLD"
         android:textStyle="bold"
+
         android:layout_alignTop="@+id/imageView3"
         android:layout_alignLeft="@+id/imageView3"
         android:layout_alignStart="@+id/imageView3"
-        android:layout_marginTop="109dp" />
+        android:layout_marginTop="180dp" />
 
 </RelativeLayout>

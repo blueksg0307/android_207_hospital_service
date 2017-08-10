@@ -5,10 +5,13 @@
     <color name="colorAccent">#546E7A</color>
     <color name="colorWarning">#EE55CB</color>
     <color name="colorGray">#8C8C8C</color>
+    <color name="Gray">#d3d3d3</color>
     <color name="colorGreen">#A4C639</color>
     <color name="colorLightGreen">#ADFF2F</color>
     <color name="colorDarkGreen">#228B22</color>
     <color name="colorPaleGreen">#09FB98</color>
+    <color name="coloraqua">#00FFFF</color>
+    <color name="skyblue">#00BFFF</color>
     <color name="colormediumspringGreen">#09FB98</color>
     <color name="springgreen">#00FF7F</color>
     <color name="LawnGreen">#7CFC00</color>
@@ -17,5 +20,11 @@
     <color name="ORRANGE">#FFA500</color>
     <color name="BROWN">#8B4513</color>
     <color name="DarkBROWN">#3E2723</color>
+    <color name="red">#ff0000</color>
+    <color name="darkred">#ce0602</color>
+    <color name="pink">#DC143C</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
 
 </resources>

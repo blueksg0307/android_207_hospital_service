@@ -1,0 +1,154 @@
+[33mcommit b35ddb6e168078593ef9e7949f27c86964c8986d[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Tue Jun 6 17:41:49 2017 +0900
+
+     Beacon connect와 충돌 해결
+
+[33mcommit e3abe69c4fb948928d60791eedac35e403db93f3[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Mon Jun 5 18:38:24 2017 +0900
+
+    WaitingListfragment 수정전
+
+[33mcommit 6ce20770f5c85fc2a7e34c45ab02282b1f086e79[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Fri Jun 2 21:29:52 2017 +0900
+
+    chart 만드는중...
+
+[33mcommit 8d9bc20dd6c68c9c4d19c151b2945f91091fb5b6[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Wed May 31 14:33:30 2017 +0900
+
+    디자인변경 및 SW데모구현경진대회 접수버전
+
+[33mcommit d8f858bd0c71b649b03916fca6538e17d00ede33[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Sun May 28 23:45:56 2017 +0900
+
+    디자인 변경
+
+[33mcommit 84410bdf5c8db76218f960afe4603851e8002dd9[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Sun May 28 21:05:26 2017 +0900
+
+    파이어베이스 연동
+
+[33mcommit 7a07e28307a1cd228fa5bc6ea16a007192d81c0a[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Sat May 27 20:01:50 2017 +0900
+
+    0527 connection with firebase
+
+[33mcommit 3b61937a8ff18d2c20d233fd058bb5f9d1282d74[m
+Merge: e99dda8 ecd0519
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Sat May 27 19:37:32 2017 +0900
+
+    Merge branches 'master' and 'master' of https://github.com/blueksg0307/android_207_hospital_service
+
+[33mcommit e99dda8410680e1bc8e3840fe79b5d6e7ca62921[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Sat May 27 19:37:14 2017 +0900
+
+    before merging with yangman
+
+[33mcommit ecd051981b8aa3afc1a4144ef03a09ff5a049b61[m
+Merge: bee95ca 51e9443
+Author: blueksg0307 <blueksg0307@gmail.com>
+Date:   Sat May 27 19:33:41 2017 +0900
+
+    Merge pull request #2 from awesometic/master
+    
+    서버에 POST 요청하는 코드 최적화
+
+[33mcommit 51e9443c448b3a781635ad2f469041a87a8deeb2[m
+Author: Awesometic <secugyu@gmail.com>
+Date:   Fri May 26 23:29:32 2017 +0900
+
+    Optimize all request codes by adding Volley Request Queue singleton
+
+[33mcommit 216e6ac69e69a946b08b5430c0858061c5547f43[m
+Author: Awesometic <secugyu@gmail.com>
+Date:   Fri May 26 21:17:51 2017 +0900
+
+    Rename packages to maintain consistency
+
+[33mcommit bee95cad9ca4961b9055112b9f6decc970505bc2[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Thu May 25 14:01:54 2017 +0900
+
+    비콘연동완료
+
+[33mcommit 4bae55a5fc78cfc81932ce8f90c9b6b3a1c374ea[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Thu May 25 05:25:23 2017 +0900
+
+    ImageCircleView Class 추가 & Pop Activity 추가
+    ;
+
+[33mcommit aa60b86dbb3e087be2e1d78f362c86fd113882c3[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Thu May 25 03:38:18 2017 +0900
+
+    Requests 클래스 추가 & 클래스 패키지화
+    ;
+
+[33mcommit d5565144b43de01654f7fcbeeccbd669f570efa2[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Tue May 23 02:52:22 2017 +0900
+
+    2017-05-23:02:51
+    
+    이름 안보이는거 수정. 아이콘이랑 앱이름 변경
+
+[33mcommit 89d742d8607e1f78cbaab3ca2046d2ce4b2e5013[m
+Merge: 3f4861e aa4dd5d
+Author: blueksg0307 <blueksg0307@gmail.com>
+Date:   Tue May 23 00:05:10 2017 +0900
+
+    Merge pull request #1 from awesometic/master
+    
+    First contribution
+
+[33mcommit aa4dd5dc3fa2084f8bf497d9eb40e0dadf9f337e[m
+Author: Awesometic <secugyu@gmail.com>
+Date:   Mon May 22 23:43:11 2017 +0900
+
+    apply .gitignore
+
+[33mcommit 0729c8ca34931b8d949e0c2a8033655303bdedad[m
+Author: Awesometic <secugyu@gmail.com>
+Date:   Mon May 22 23:38:02 2017 +0900
+
+    optimize source code by adding utils.Constants
+
+[33mcommit 9c85c7c4289c40d8fa2f9bcbbcc96abecb868100[m
+Author: Awesometic <secugyu@gmail.com>
+Date:   Mon May 22 23:13:51 2017 +0900
+
+    update .gitignore for android project
+
+[33mcommit 3f4861e9a21967bb32c09800efbeefe34c82ea25[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Mon May 22 14:12:32 2017 +0900
+
+    modify README
+
+[33mcommit d27cae9a87d76567abe9c8d5eec050bbc2ba4cbb[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Mon May 22 14:10:54 2017 +0900
+
+    add README
+
+[33mcommit 30cef36cf092d20c11a7eb402ebd629bc7ec1860[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Mon May 22 14:02:15 2017 +0900
+
+    init commit
+
+[33mcommit c2932278a6eca32d141bd0d725c883ac8fe01968[m
+Author: Seankim <blueksg0307@gmail.com>
+Date:   Mon May 22 14:00:18 2017 +0900
+
+    :confetti_ball: Added .gitattributes & .gitignore files
